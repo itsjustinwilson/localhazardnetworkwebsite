@@ -806,6 +806,8 @@ img { max-width: 100%; display: block; }
   gap: 16px;
 }
 
+a.deliverable-item { color: inherit; text-decoration: none; display: flex; }
+
 .deliverable-item {
   background: var(--bg-surface);
   border: 1px solid var(--border);
