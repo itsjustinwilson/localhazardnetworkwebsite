@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Hazard Network — ANU ENGN4300 Capstone 2026</title>
+  <meta name="description" content="ENGN4300 Capstone project assessing the feasibility of multi-hazard monitoring in rural NSW using LoRa/MeshCore sensor networks." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       TOP BAR
+       ============================================================ -->
+  <div class="topbar">
+    <div class="container">
+      <span>ENGN4300 Capstone Design Project &mdash; School of Engineering, ANU</span>
+      <span>Semester 1 &amp; 2, 2026</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="navbar-brand">
+        <div class="brand-icon">&#127758;</div>
+        <span>Local Hazard Network</span>
+      </a>
+      <ul class="navbar-nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#workstreams">Workstreams</a></li>
+        <li><a href="#focus-areas">Focus Areas</a></li>
+        <li><a href="#milestones">Milestones</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#deliverables">Deliverables</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-eyebrow">
+        <span class="badge">ENGN4300 &middot; 2026</span>
+        <span class="badge">The Australian National University</span>
+      </div>
+
+      <h1>
+        Local<br />
+        <span>Hazard Network</span>
+      </h1>
+
+      <p class="hero-desc">
+        Assessing the feasibility of multi-hazard monitoring in rural New South Wales
+        using low-power LoRa sensor nodes and the MeshCore communication protocol —
+        building disaster resilience for at-risk communities.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#about" class="btn btn-primary">Explore the Project</a>
+        <a href="#deliverables" class="btn btn-outline">View Deliverables</a>
+      </div>
+
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-value">4</div>
+          <div class="hero-stat-label">Focus Regions</div>
+        </div>
+        <div>
+          <div class="hero-stat-value">3</div>
+          <div class="hero-stat-label">Workstreams</div>
+        </div>
+        <div>
+          <div class="hero-stat-value">5+</div>
+          <div class="hero-stat-label">Hazard Types</div>
+        </div>
+        <div>
+          <div class="hero-stat-value">6</div>
+          <div class="hero-stat-label">Team Members</div>
+        </div>
+        <div>
+          <div class="hero-stat-value">2028</div>
+          <div class="hero-stat-label">DRF Funded Until</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+       ============================================================ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="section-label">About the Project</span>
+          <h2 class="section-title">Disaster Resilience for Rural NSW Communities</h2>
+          <p>
+            Rural communities in NSW often lack localised environmental data and experience
+            poor data coverage — problems that are severely compounded during hazardous
+            weather events. This limits the ability of emergency services and communities
+            to access the information they need for disaster preparedness and response.
+          </p>
+          <p>
+            This project extends a previous community disaster resilience initiative
+            (a flood monitoring system built on a Meshtastic network) by investigating
+            alternative LoRa-based protocols such as <strong>MeshCore</strong>, and
+            broadening monitoring to cover multiple hazard types including bushfires,
+            landslides, severe storms, and drought. The final output is a prototype
+            hazard detection sensor with the infrastructure to communicate telemetry
+            back to the pre-existing LoRa network.
+          </p>
+          <p>
+            The project is part of the <strong>Disaster Ready Fund (DRF)</strong> initiative,
+            funded by the National Emergency Management Agency (NEMA) and running until
+            March 2028. All work produced is designed to be handed forward to future teams.
+          </p>
+        </div>
+
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <div class="highlight-icon">&#128225;</div>
+            <div class="highlight-body">
+              <h4>MeshCore Communication</h4>
+              <p>Investigating MeshCore as a resilient LoRa-based backup communication
+                 network that operates reliably during extreme weather events.</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">&#127777;</div>
+            <div class="highlight-body">
+              <h4>Multi-Hazard Sensing</h4>
+              <p>Feasibility study and prototype development for environmental sensors
+                 detecting flooding, bushfire, landslide, storm, and drought indicators.</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">&#9889;</div>
+            <div class="highlight-body">
+              <h4>Low-Power Deployment</h4>
+              <p>Solar-powered, COTS-based sensor nodes designed to be low-cost,
+                 scalable, and robust enough for remote rural conditions.</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">&#128101;</div>
+            <div class="highlight-body">
+              <h4>Community-Centred Design</h4>
+              <p>Working alongside Resilient Uki and local landowners to ensure
+                 the system meets real community needs and constraints.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WORKSTREAMS
+       ============================================================ -->
+  <section class="section section--alt" id="workstreams">
+    <div class="container">
+      <span class="section-label">Project Structure</span>
+      <h2 class="section-title">Three Concurrent Workstreams</h2>
+      <p class="section-desc">
+        The first half of the project runs three parallel workstreams, each tackling a distinct
+        technical challenge. The second half integrates their outputs into a unified, deployable prototype.
+      </p>
+
+      <div class="workstreams-grid">
+        <!-- WS1 -->
+        <div class="ws-card">
+          <div class="ws-number">Workstream 1</div>
+          <h3>Communication Network</h3>
+          <p>
+            Investigation and small-scale testing of MeshCore as a backup communication
+            network for emergency data transfer in rural areas. Builds upon the existing
+            Meshtastic-based flood monitoring system while researching modern LoRa alternatives.
+          </p>
+          <ul class="ws-list">
+            <li>Small-scale MeshCore network testing</li>
+            <li>Comparative research: Meshtastic vs MeshCore</li>
+            <li>Communication range &amp; reliability evaluation</li>
+            <li>Battery life and repeater node assessment</li>
+            <li>Network resilience during off-nominal conditions</li>
+          </ul>
+        </div>
+
+        <!-- WS2 -->
+        <div class="ws-card">
+          <div class="ws-number">Workstream 2</div>
+          <h3>COTS Sensor Feasibility</h3>
+          <p>
+            Feasibility study and options assessment of consumer-off-the-shelf (COTS) components
+            to be used in the multi-hazard monitoring stations. Focuses on selecting appropriate
+            sensors for the range of hazards prevalent in rural NSW.
+          </p>
+          <ul class="ws-list">
+            <li>Research of environmental hazards (flooding, bushfire, landslide, storm, drought)</li>
+            <li>COTS sensor suitability assessment (rainfall, stream height, temperature, smoke, humidity, wind)</li>
+            <li>Component selection and options assessment report</li>
+            <li>Installation requirements for different site types</li>
+          </ul>
+        </div>
+
+        <!-- WS3 -->
+        <div class="ws-card">
+          <div class="ws-number">Workstream 3</div>
+          <h3>Physical Harness &amp; Power</h3>
+          <p>
+            Development of the physical harness for securing the sensor design to various
+            landscapes, alongside power supply and regulation design to ensure low power
+            consumption and long-lasting battery life in the field.
+          </p>
+          <ul class="ws-list">
+            <li>Physical enclosure and mounting harness design</li>
+            <li>3D-printed components for varied terrain deployment</li>
+            <li>Power supply and regulation circuit design</li>
+            <li>Solar charging and battery life optimisation</li>
+            <li>Environmental durability and weatherproofing</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Scope Table -->
+      <div style="margin-top: 40px;">
+        <h3 style="font-size:1.1rem; font-weight:700; color:var(--text); margin-bottom:16px;">
+          Project Scope Summary
+        </h3>
+        <div class="scope-table-wrapper">
+          <table class="scope-table">
+            <thead>
+              <tr>
+                <th>Area</th>
+                <th>In Scope</th>
+                <th>Out of Scope</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>General</strong></td>
+                <td>Testing within ACT; range, sensor, reliability, battery testing; desktop studies; liaison via project host</td>
+                <td>Testing outside ACT; regular site visits; integration with official emergency alert systems; permanent installation</td>
+              </tr>
+              <tr>
+                <td><strong>WS1 – Comms</strong></td>
+                <td>Small-scale MeshCore testing; LoRa platform research; range &amp; reliability evaluation</td>
+                <td>Developing new communication networks; large-scale NSW testing; integration with existing networks</td>
+              </tr>
+              <tr>
+                <td><strong>WS2 – Sensors</strong></td>
+                <td>COTS sensor options assessment; hazard research (flood, bushfire, landslide, storm, drought); installation requirements</td>
+                <td>Uncommon Australian hazards; deployment of permanent stations; development of new sensors</td>
+              </tr>
+              <tr>
+                <td><strong>WS3 – Harness &amp; Power</strong></td>
+                <td>Physical harness design; 3D-printed enclosures; power supply &amp; regulation; solar charging; weatherproofing</td>
+                <td>Large-scale manufacturing; permanent infrastructure installation; long-term maintenance</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOCUS AREAS
+       ============================================================ -->
+  <section class="section" id="focus-areas">
+    <div class="container">
+      <span class="section-label">Deployment Regions</span>
+      <h2 class="section-title">Project Focus Areas</h2>
+      <p class="section-desc">
+        Four sub-basins in NSW have been identified as priority regions, selected from
+        the previous Flood Safety Capstone project and the broader DRF-funded initiative.
+        Each region faces unique challenges in data coverage and communications.
+      </p>
+
+      <div class="focus-areas-grid">
+        <div class="area-card">
+          <div class="area-icon">&#127795;</div>
+          <h3>Terania</h3>
+          <div class="area-size">197.12</div>
+          <div class="area-unit">km&sup2;</div>
+          <div class="area-coords">-28.6309, 153.2845</div>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">&#127754;</div>
+          <h3>Main Arm</h3>
+          <div class="area-size">30.70</div>
+          <div class="area-unit">km&sup2;</div>
+          <div class="area-coords">-28.5242, 153.4470</div>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">&#127956;</div>
+          <h3>Uki</h3>
+          <div class="area-size">293.79</div>
+          <div class="area-unit">km&sup2;</div>
+          <div class="area-coords">-28.4142, 153.3362</div>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">&#127758;</div>
+          <h3>Mandagery</h3>
+          <div class="area-size">2,004.20</div>
+          <div class="area-unit">km&sup2;</div>
+          <div class="area-coords">-33.3487, 148.4356</div>
+        </div>
+      </div>
+
+      <!-- Hazards -->
+      <div style="margin-top: 16px;">
+        <span class="section-label">Monitored Hazards</span>
+        <h3 class="section-title" style="font-size:1.4rem; margin-bottom:24px;">
+          Natural Hazards Under Investigation
+        </h3>
+        <div class="hazards-grid">
+          <div class="hazard-item">
+            <span class="hazard-emoji">&#127783;</span>
+            <div>
+              <h4>Flooding</h4>
+              <p>Primary focus from previous project; stream height and rainfall monitoring.</p>
+            </div>
+          </div>
+          <div class="hazard-item">
+            <span class="hazard-emoji">&#128293;</span>
+            <div>
+              <h4>Bushfire</h4>
+              <p>Smoke and temperature sensors to detect early signs of fire activity.</p>
+            </div>
+          </div>
+          <div class="hazard-item">
+            <span class="hazard-emoji">&#9968;</span>
+            <div>
+              <h4>Landslides</h4>
+              <p>Soil moisture and rainfall indicators relevant to slope instability.</p>
+            </div>
+          </div>
+          <div class="hazard-item">
+            <span class="hazard-emoji">&#9928;</span>
+            <div>
+              <h4>Severe Storms</h4>
+              <p>Wind speed and hail indicators for severe weather detection.</p>
+            </div>
+          </div>
+          <div class="hazard-item">
+            <span class="hazard-emoji">&#9728;</span>
+            <div>
+              <h4>Drought</h4>
+              <p>Temperature, humidity, and rainfall deficit tracking over extended periods.</p>
+            </div>
+          </div>
+          <div class="hazard-item">
+            <span class="hazard-emoji">&#128268;</span>
+            <div>
+              <h4>General Monitoring</h4>
+              <p>Multi-parameter environmental sensing for comprehensive situational awareness.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MILESTONES
+       ============================================================ -->
+  <section class="section section--alt" id="milestones">
+    <div class="container">
+      <span class="section-label">Progress</span>
+      <h2 class="section-title">Project Schedule &amp; Milestones</h2>
+      <p class="section-desc">
+        The project runs across Semesters 1 and 2, 2026, structured around four audit
+        milestones with a modified spiral systems engineering approach.
+      </p>
+
+      <div class="milestones-timeline">
+
+        <div class="milestone completed">
+          <div class="milestone-meta">
+            <span class="milestone-tag completed">Completed</span>
+            <span class="milestone-week">Semester 1 &mdash; Week 4</span>
+          </div>
+          <h3>Audit 1 — Orientation</h3>
+          <p>
+            Established team communications, reviewed previous project repository and handover
+            documentation, made contact with project host, and produced initial planning documents.
+          </p>
+          <div class="milestone-deliverables">
+            <span>Concept of Operations v1.0</span>
+            <span>Project Management Plan v1.0</span>
+            <span>Presentation</span>
+            <span>Landing Page</span>
+          </div>
+        </div>
+
+        <div class="milestone active">
+          <div class="milestone-meta">
+            <span class="milestone-tag active">In Progress</span>
+            <span class="milestone-week">Semester 1 &mdash; Week 11</span>
+          </div>
+          <h3>Audit 2 — Investigation</h3>
+          <p>
+            Research into communication platforms (Meshtastic, MeshCore, and alternatives) and
+            hazard detection feasibility. All devices for detection to be decided by this milestone.
+          </p>
+          <div class="milestone-deliverables">
+            <span>Systems Engineering Governance</span>
+            <span>Technical Artifacts</span>
+            <span>Test &amp; Evaluation Plan</span>
+          </div>
+        </div>
+
+        <div class="milestone">
+          <div class="milestone-meta">
+            <span class="milestone-tag upcoming">Upcoming</span>
+            <span class="milestone-week">Semester 2 &mdash; Week 4</span>
+          </div>
+          <h3>Audit 3 — Integration</h3>
+          <p>
+            First prototypes of hazard detection device(s) complete and ready for field testing
+            within the ACT region. Field testing plans established and underway.
+          </p>
+          <div class="milestone-deliverables">
+            <span>System Prototype</span>
+            <span>Field Testing Plan</span>
+            <span>Updated T&amp;E Plan</span>
+          </div>
+        </div>
+
+        <div class="milestone">
+          <div class="milestone-meta">
+            <span class="milestone-tag upcoming">Upcoming</span>
+            <span class="milestone-week">Semester 2 &mdash; Week 11</span>
+          </div>
+          <h3>Audit 4 — Evaluation</h3>
+          <p>
+            All field testing complete, findings report drafted. Team reflections documented
+            for future project onboarding and handover.
+          </p>
+          <div class="milestone-deliverables">
+            <span>Findings Report</span>
+            <span>Poster</span>
+            <span>Video Pitch</span>
+            <span>Handover Documentation</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TEAM
+       ============================================================ -->
+  <section class="section" id="team">
+    <div class="container">
+      <span class="section-label">The People</span>
+      <h2 class="section-title">Meet the Team</h2>
+      <p class="section-desc">
+        A six-person multidisciplinary capstone team from the ANU School of Engineering,
+        working collaboratively with democratic decision-making and clearly defined roles.
+      </p>
+
+      <div class="team-grid">
+
+        <div class="team-card">
+          <div class="team-avatar">GE</div>
+          <h3>Grady Emerson</h3>
+          <div class="team-role">Electronics Engineer &middot; Stakeholder Manager</div>
+          <p>Supports electronics-specialised team members as a generalist and serves as
+             the primary point of contact for all external stakeholder communications.</p>
+          <div class="team-email"><a href="mailto:u6892552@anu.edu.au">u6892552@anu.edu.au</a></div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">JW</div>
+          <h3>Justin Wilson</h3>
+          <div class="team-role">Website Designer &middot; 3D CAD Modeller</div>
+          <p>Manages and updates the project website, and designs 3D-printed enclosures
+             and mounting hardware for the sensor system.</p>
+          <div class="team-email"><a href="mailto:u7230220@anu.edu.au">u7230220@anu.edu.au</a></div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">KP</div>
+          <h3>Kai Pietschner</h3>
+          <div class="team-role">Power System Designer &middot; Repository Manager</div>
+          <p>Designs and approves the power system for sensor nodes, and maintains the
+             project repository structure and organisation.</p>
+          <div class="team-email"><a href="mailto:u7683663@anu.edu.au">u7683663@anu.edu.au</a></div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">KD</div>
+          <h3>Ken Doan</h3>
+          <div class="team-role">Firmware Developer</div>
+          <p>Develops the firmware for the sensor system, ensuring correct integration
+             between sensing subsystems and the MeshCore communication backbone.</p>
+          <div class="team-email"><a href="mailto:u6571006@anu.edu.au">u6571006@anu.edu.au</a></div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">KG</div>
+          <h3>Kyle Greenwood</h3>
+          <div class="team-role">Workstream Integration Lead</div>
+          <p>Monitors workstream interdependencies to prevent critical path delays and
+             plans for the final integration of both workstreams into a complete system.</p>
+          <div class="team-email"><a href="mailto:u7472943@anu.edu.au">u7472943@anu.edu.au</a></div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">RF</div>
+          <h3>Ruby Fusca</h3>
+          <div class="team-role">Environmental Engineer &middot; Task Manager</div>
+          <p>Ensures environmental compliance and manages the team Trello board,
+             keeping tasks prioritised and assigned from meeting outcomes.</p>
+          <div class="team-email"><a href="mailto:u7656491@anu.edu.au">u7656491@anu.edu.au</a></div>
+        </div>
+
+      </div>
+
+      <!-- Project Hosts
+      <div style="margin-top: 16px;">
+        <h3 style="font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:16px;">
+          Project Hosts &amp; Supervisors
+        </h3>
+      </div>
+      <div class="team-hosts">
+        <div class="host-card">
+          <div class="host-avatar">JS</div>
+          <div>
+            <h3>Jeremy Smith</h3>
+            <div class="host-title">Team Mentor &amp; Project Host</div>
+            <p>ANU researcher and host of the Local Hazard Network Project. Provides context,
+               project vision, constraints, and liaises with external stakeholders including
+               NEMA and SES on behalf of the team.</p>
+          </div>
+        </div>
+        <div class="host-card">
+          <div class="host-avatar">AP</div>
+          <div>
+            <h3>Asanka Peramune</h3>
+            <div class="host-title">Project Host &amp; Technical Expert</div>
+            <p>ANU researcher providing technical expertise on electronic nodes, network setup,
+               and testing. Key point of contact for MeshCore implementation and hardware
+               decisions.</p>
+          </div>
+        </div> -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DELIVERABLES
+       ============================================================ -->
+  <section class="section section--alt" id="deliverables">
+    <div class="container">
+      <span class="section-label">Outputs</span>
+      <h2 class="section-title">Project Deliverables</h2>
+      <p class="section-desc">
+        The following deliverables will be produced and made available through this
+        landing page and the project SharePoint repository.
+      </p>
+
+      <div class="deliverables-grid">
+        <div class="deliverable-item">
+          <div class="deliverable-icon">&#128196;</div>
+          <div>
+            <h4>Concept of Operations</h4>
+            <p>Scope, objectives, stakeholder analysis, and system overview.</p>
+          </div>
+        </div>
+        <div class="deliverable-item">
+          <div class="deliverable-icon">&#128203;</div>
+          <div>
+            <h4>Project Management Plan</h4>
+            <p>WBS, schedule, budget, risk register, and communication plan.</p>
+          </div>
+        </div>
+        <div class="deliverable-item">
+          <div class="deliverable-icon">&#128221;</div>
+          <div>
+            <h4>Test &amp; Evaluation Plan</h4>
+            <p>Structured test plan for prototype field and bench testing.</p>
+          </div>
+        </div>
+        <div class="deliverable-item">
+          <div class="deliverable-icon">&#128202;</div>
+          <div>
+            <h4>Feasibility Report</h4>
+            <p>Options assessment for the multi-hazard monitoring system.</p>
+          </div>
+        </div>
+        <div class="deliverable-item">
+          <div class="deliverable-icon">&#9881;</div>
+          <div>
+            <h4>System Prototype</h4>
+            <p>Working prototype of the hazard detection sensor node(s).</p>
+          </div>
+        </div>
+        <div class="deliverable-item">
+          <div class="deliverable-icon">&#128214;</div>
+          <div>
+            <h4>Handover Documentation</h4>
+            <p>Comprehensive documentation to onboard the next capstone team.</p>
+          </div>
+        </div>
+        <div class="deliverable-item">
+          <div class="deliverable-icon">&#128444;</div>
+          <div>
+            <h4>Project Poster</h4>
+            <p>Visual summary of findings for the capstone exhibition.</p>
+          </div>
+        </div>
+        <div class="deliverable-item">
+          <div class="deliverable-icon">&#127909;</div>
+          <div>
+            <h4>Video Pitch</h4>
+            <p>Short video presenting the project outcomes to stakeholders.</p>
+          </div>
+        </div>
+        <div class="deliverable-item">
+          <div class="deliverable-icon">&#128190;</div>
+          <div>
+            <h4>Project Repository</h4>
+            <p>All documents, code, and design files in SharePoint.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <h3>Local Hazard Network</h3>
+          <p>
+            An ENGN4300 Capstone Design Project at the Australian National University,
+            School of Engineering / College of Systems and Society. Part of the
+            NEMA Disaster Ready Fund initiative, funded until March 2028.
+          </p>
+        </div>
+
+        <!-- <div class="footer-col">
+          <h4>Sections</h4>
+          <ul>
+            <li><a href="#about">About the Project</a></li>
+            <li><a href="#workstreams">Workstreams</a></li>
+            <li><a href="#focus-areas">Focus Areas</a></li>
+            <li><a href="#milestones">Milestones</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#deliverables">Deliverables</a></li>
+          </ul>
+        </div> -->
+
+        <!-- <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:Jeremy.smith@anu.edu.au">Jeremy Smith (Host)</a></li>
+            <li><a href="mailto:Therese.Flapper@anu.edu.au">Therese Flapper (Tutor)</a></li>
+            <li><a href="mailto:engn4300.cecc@anu.edu.au">Course Convenor</a></li>
+          </ul>
+        </div> -->
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>
+          &copy; 2026 Local Hazard Network Capstone Team &mdash; ANU ENGN4300.
+          IP shared equally between students and project host.
+        </span>
+        <span>
+          Grady Emerson &middot; Justin Wilson &middot; Kai Pietschner &middot;
+          Ken Doan &middot; Kyle Greenwood &middot; Ruby Fusca
+        </span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
