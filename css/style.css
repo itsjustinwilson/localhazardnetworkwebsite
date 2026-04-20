@@ -143,6 +143,8 @@ img { max-width: 100%; display: block; }
   font-weight: 700;
   font-size: 1rem;
   letter-spacing: 0.01em;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .navbar-brand .brand-icon {
@@ -171,6 +173,7 @@ img { max-width: 100%; display: block; }
   font-weight: 500;
   padding: 6px 14px;
   border-radius: 6px;
+  white-space: nowrap;
   transition: background var(--transition), color var(--transition);
 }
 
@@ -802,11 +805,36 @@ img { max-width: 100%; display: block; }
    ============================================= */
 .deliverables-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 16px;
 }
 
 a.deliverable-item { color: inherit; text-decoration: none; display: flex; }
+
+.deliverable-item--primary {
+  grid-column: span 3;
+  border-color: var(--accent-border);
+  background: var(--accent-glow);
+}
+
+.deliverable-item--primary h4 {
+  font-size: 1rem;
+}
+
+.deliverable-item--primary .deliverable-icon {
+  width: 46px;
+  height: 46px;
+  font-size: 1.2rem;
+}
+
+.deliverable-item--secondary {
+  grid-column: span 2;
+  opacity: 0.7;
+}
+
+.deliverable-item--secondary:hover {
+  opacity: 1;
+}
 
 .deliverable-item {
   background: var(--bg-surface);
@@ -967,8 +995,11 @@ a.deliverable-item { color: inherit; text-decoration: none; display: flex; }
   .hazards-grid        { grid-template-columns: repeat(2, 1fr); }
   .team-grid           { grid-template-columns: repeat(2, 1fr); }
   .deliverables-grid   { grid-template-columns: repeat(2, 1fr); }
+  .deliverables-grid .deliverable-item--primary  { grid-column: span 1; }
+  .deliverables-grid .deliverable-item--secondary { grid-column: span 1; }
   .footer-grid         { grid-template-columns: 1fr; gap: 28px; }
   .team-hosts          { grid-template-columns: 1fr; }
+  .navbar-nav          { display: none; }
 }
 
 @media (max-width: 600px) {
@@ -978,6 +1009,7 @@ a.deliverable-item { color: inherit; text-decoration: none; display: flex; }
   .hazards-grid         { grid-template-columns: 1fr; }
   .team-grid            { grid-template-columns: 1fr; }
   .deliverables-grid    { grid-template-columns: 1fr; }
-  .navbar-nav           { display: none; }
+  .deliverables-grid .deliverable-item--primary  { grid-column: span 1; }
+  .deliverables-grid .deliverable-item--secondary { grid-column: span 1; }
   .hero-stats           { gap: 24px; }
 }
