@@ -1076,3 +1076,54 @@ a.deliverable-item { color: inherit; text-decoration: none; display: flex; }
   .deliverables-grid .deliverable-item--secondary { grid-column: span 1; }
   .hero-stats           { gap: 24px; }
 }
+
+/* ============================================================
+   FIELD TEST PHOTO GALLERY
+   ============================================================ */
+.field-photo-section {
+  margin-top: 48px;
+}
+
+.field-photo-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.field-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.field-photo-item {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background: var(--bg-surface);
+}
+
+.field-photo-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.field-photo-caption {
+  padding: 9px 14px;
+  font-size: 0.73rem;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 700px) {
+  .field-photo-grid {
+    grid-template-columns: 1fr;
+  }
+}
