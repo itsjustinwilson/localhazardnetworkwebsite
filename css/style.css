@@ -58,7 +58,7 @@
   --transition: 0.24s ease;
 }
 
-html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
