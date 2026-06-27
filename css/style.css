@@ -273,6 +273,7 @@ img { max-width: 100%; display: block; }
   color: #FFFFFF;
   padding: 100px 0 80px;
   position: relative;
+  overflow: hidden;
 }
 
 .hero::before {
