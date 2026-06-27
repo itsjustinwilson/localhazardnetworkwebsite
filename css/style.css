@@ -471,7 +471,7 @@ img { max-width: 100%; display: block; }
 .about-highlights { display: flex; flex-direction: column; gap: 14px; }
 
 .about-field-photo {
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   overflow: hidden;
   border: 1px solid var(--border-light);
   box-shadow: var(--shadow);
@@ -839,7 +839,7 @@ img { max-width: 100%; display: block; }
 .milestones-timeline::before {
   content: '';
   position: absolute;
-  left: 8px; top: 8px; bottom: 8px;
+  left: 8px; top: 8px; bottom: 140px;
   width: 2px;
   background: linear-gradient(to bottom, var(--gold) 30%, rgba(255,255,255,0.08) 60%);
 }
@@ -1118,7 +1118,7 @@ a.deliverable-item { color: inherit; text-decoration: none; display: flex; }
 }
 
 .deliverable-item--tertiary { grid-column: span 2; opacity: 0.78; }
-.deliverable-item--tertiary:hover { opacity: 1; }
+/* .deliverable-item--tertiary:hover { opacity: 1; } */
 
 .deliverable-item {
   background: rgba(255,255,255,0.05);
@@ -1132,10 +1132,10 @@ a.deliverable-item { color: inherit; text-decoration: none; display: flex; }
   transition: transform var(--transition), background var(--transition);
 }
 
-.deliverable-item:hover {
+/* .deliverable-item:hover {
   transform: translateY(-2px);
   background: rgba(255,255,255,0.08);
-}
+} */
 
 .deliverable-icon {
   width: 38px;
