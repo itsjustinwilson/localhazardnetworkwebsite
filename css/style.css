@@ -1430,8 +1430,8 @@ a.deliverable-item { color: inherit; text-decoration: none; display: flex; }
   .hazards-grid        { grid-template-columns: repeat(2, 1fr); }
   .team-grid           { grid-template-columns: repeat(2, 1fr); }
   .deliverables-grid   { grid-template-columns: repeat(2, 1fr); }
-  .deliverables-grid .deliverable-item--primary   { grid-column: span 1; }
-  .deliverables-grid .deliverable-item--secondary { grid-column: span 1; }
+  .deliverables-grid .deliverable-item--primary   { grid-column: span 2; }
+  .deliverables-grid .deliverable-item--secondary { grid-column: span 2; }
   .footer-grid         { grid-template-columns: 1fr; gap: 28px; }
   .team-hosts          { grid-template-columns: 1fr; }
   .navbar-nav          { display: none; }
@@ -1449,7 +1449,7 @@ a.deliverable-item { color: inherit; text-decoration: none; display: flex; }
   .hazards-grid         { grid-template-columns: 1fr; }
   .team-grid            { grid-template-columns: 1fr; }
   .deliverables-grid    { grid-template-columns: 1fr; }
-  .deliverables-grid .deliverable-item--primary   { grid-column: span 1; }
-  .deliverables-grid .deliverable-item--secondary { grid-column: span 1; }
+  .deliverables-grid .deliverable-item--primary   { grid-column: span 2; }
+  .deliverables-grid .deliverable-item--secondary { grid-column: span 2; }
   .hero-stats           { gap: 24px; }
 }
