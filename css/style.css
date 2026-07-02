@@ -15,9 +15,9 @@
   --teal-hover:    #22808f;
   --green:         #2D7A5E;
   --green-hover:   #368a6c;
-  --gold:          #E8A020;
-  --gold-light:    rgba(232,160,32,0.15);
-  --gold-border:   rgba(232,160,32,0.30);
+  --gold:          #FFC000;
+  --gold-light:    #FFC00026;
+  --gold-border:   #FFC0004d;
 
   /* Backgrounds */
   --bg-dark:    #0D2B45;
