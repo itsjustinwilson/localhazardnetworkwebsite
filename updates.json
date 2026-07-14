@@ -1,0 +1,38 @@
+[
+  {
+    "date": "25 June 2026",
+    "tag": "Mid-Year break",
+    "title": "RFS Communications Team Presentation",
+    "body": "We got the opportunity to attend the Rural Fire Service Communications Team presentation, where we gained valuable insights and context into the ways that the RFS communicate with their teams in the field, and how they use data to make decisions. We will take the learnings from our time with the RFS and apply them to our project, ensuring that our work is aligned with the needs of emergency services and the communities they serve.",
+    "image": "images/field-tests/rfs-comms-vehicle.jpg",
+    "imageAlt": "Four team members standing together at night in front of a NSW Rural Fire Service response van with visible NSW RURAL FIRE SERVICE lettering",
+    "imageCaption": "The team in front of the RFS Operational Commmand Vehicle"
+  },
+  {
+    "date": "30 May 2026",
+    "tag": "Sem 1 · Week 12",
+    "title": "Completion of Component Selection Meeting",
+    "body": "As we have reached the end of the semester, we have completed the component selection meeting, finalising the key hardware components for the initial sensor node prototype. The next steps involve procuring the components and beginning the design and assembly of the first prototype for field testing in Semester 2.",
+    "image": "",
+    "imageAlt": "",
+    "imageCaption": ""
+  },
+  {
+    "date": "17 May 2026",
+    "tag": "Sem 1 · Week 10",
+    "title": "Mid-Project Presentation and Workstream Reports Update",
+    "body": "With the mid-project presentation and workstream reports complete, we are now focused on preparing for the next milestone, creating the first prototypes of the sensor node and beginning testing.",
+    "image": "",
+    "imageAlt": "",
+    "imageCaption": ""
+  },
+  {
+    "date": "11 May 2026",
+    "tag": "Sem 1 · Week 9",
+    "title": "Workstream Progress Update",
+    "body": "Research is well underway across all three workstreams. The Power and Enclosure Report has been completed with recommendations for solar panel sizing and battery capacity. The network and sensors workstreams are progressing well and are on track to be completed by the end of phase 1.",
+    "image": "",
+    "imageAlt": "",
+    "imageCaption": ""
+  }
+]

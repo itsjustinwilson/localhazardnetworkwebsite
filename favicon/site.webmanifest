@@ -1,6 +1,6 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Local Hazards Network",
+  "short_name": "LHN",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",

@@ -44,7 +44,7 @@
   <nav class="navbar">
     <div class="container">
       <a href="#" class="navbar-brand">
-        <img src="images/branding/White Logo.png" alt="Local Hazard Network" class="navbar-logo" />
+        <img src="images/branding/white-logo.png" alt="Local Hazard Network" class="navbar-logo" />
       </a>
       <ul class="navbar-nav">
         <li><a href="#about">About</a></li>
@@ -95,7 +95,7 @@
         </div>
 
         <div class="hero-image-wrap">
-          <img src="images/spring_valley_farm_sensor.jpg"
+          <img src="images/sensors/spring-valley-farm-sensor.jpg"
             alt="Existing LoRa monitoring station deployed at Spring Valley Farm, rural NSW" />
           <div class="hero-image-caption">Existing LoRa node deployment in rural NSW</div>
         </div>
@@ -140,29 +140,7 @@
       </div>
 
       <!-- Latest update -->
-      <div class="update-card">
-        <div class="update-content">
-          <div class="update-meta">
-            <span class="update-date">30 May 2026</span>
-            <span class="update-tag">Mid-Year break</span>
-          </div>
-          <h3 class="update-title">RFS Communications Team Presentation</h3>
-          <p class="update-body">
-            We got the opportunity to attend the Rural Fire Service Communications Team presentation, where we
-            gained valuable insights and
-            context into the ways that the RFS communicate with their teams in the field, and how they use data to make
-            decisions. We will take the learnings from our time with the RFS and apply them to our project, ensuring that our work is 
-            aligned with the needs of emergency services and the communities they serve.
-
-          </p>
-        </div>
-        <div class="update-image-wrap">
-          <img src="images/images/rfs-comms-vehicle.jpg" alt="Four team members standing together at night in front of a NSW Rural Fire Service response van with visible NSW RURAL FIRE SERVICE lettering" style="border-radius: 16px;" />
-          <div class="update-image-caption">The team in front of the RFS Operational Commmand Vehicle</div>
-        </div>
-      </div>
-
-
+      <div id="latest-update-container"></div>
 
       <!-- Previous updates archive -->
       <details class="updates-archive">
@@ -170,69 +148,7 @@
           <i class="updates-archive-chevron">&#9654;</i>
           Previous Updates
         </summary>
-        <div class="updates-archive-list">
-          <div class="update-card">
-            <div class="update-content">
-              <div class="update-meta">
-                <span class="update-date">30 May 2026</span>
-                <span class="update-tag">Sem 1 · Week 12</span>
-              </div>
-              <h3 class="update-title">Completion of Component Selection Meeting</h3>
-              <p class="update-body">
-                As we have reached the end of the semester, we have completed the component selection meeting,
-                finalising the key hardware components for the initial sensor node prototype. The next steps involve
-                procuring the components and beginning the design and assembly of the first prototype for field testing
-                in Semester 2.
-              </p>
-            </div>
-          </div>
-
-          <div class="update-card">
-            <div class="update-content">
-              <div class="update-meta">
-                <span class="update-date">17 May 2026</span>
-                <span class="update-tag">Sem 1 · Week 10</span>
-              </div>
-              <h3 class="update-title">Mid-Project Presentation and Workstream Reports Update</h3>
-              <p class="update-body">
-                With the mid-project presentation and workstream reports complete, we are now focused on preparing
-                for the next milestone, creating the first prototypes of the sensor node and beginning testing.
-              </p>
-            </div>
-            <!-- <div class="update-image-wrap">
-              <div class="update-image-placeholder">
-                <div class="update-image-placeholder-inner">
-                  <span>📷</span>
-                  <span>Add an image</span>
-                </div>
-              </div>
-              <div class="update-image-caption">Replace with image caption</div>
-            </div> -->
-          </div>
-          <div class="update-card">
-            <div class="update-content">
-              <div class="update-meta">
-                <span class="update-date">11 May 2026</span>
-                <span class="update-tag">Sem 1 · Week 9</span>
-              </div>
-              <h3 class="update-title">Workstream Progress Update</h3>
-              <p class="update-body">
-                Research is well underway across all three workstreams. The Power and Enclosure Report has been
-                completed with recommendations for solar panel sizing and battery capacity. The network and sensors
-                workstreams are progressing well and are on track to be completed by the end of phase 1.
-              </p>
-            </div>
-            <!-- <div class="update-image-wrap">
-              <div class="update-image-placeholder">
-                <div class="update-image-placeholder-inner">
-                  <span>📷</span>
-                  <span>Add an image</span>
-                </div>
-              </div>
-              <div class="update-image-caption">Replace with image caption</div>
-            </div> -->
-          </div>
-        </div>
+        <div class="updates-archive-list" id="archived-updates-container"></div>
       </details>
     </div>
   </section>
@@ -269,7 +185,7 @@
 
         <div class="about-highlights">
           <div class="about-field-photo">
-            <img src="images/sensor.jpg" alt="LoRa sensor node mounted on a fence post in a rural NSW paddock" />
+            <img src="images/sensors/sensor.jpg" alt="LoRa sensor node mounted on a fence post in a rural NSW paddock" />
             <div class="about-field-caption">Existing sensor node deployed in the field, rural NSW</div>
           </div>
           <div class="highlight-card">
@@ -430,18 +346,18 @@
         <h3 class="field-photo-heading">Field Testing — In Action</h3>
         <div class="field-photo-grid">
           <div class="field-photo-item">
-            <img src="images/images/field-test-antennae-testing.jpg"
+            <img src="images/field-tests/antennae-testing.jpg"
               alt="Antenna testing during MeshCore network field evaluation" />
             <div class="field-photo-caption">Antenna testing during MeshCore network field evaluation</div>
           </div>
           <div class="field-photo-item">
-            <img src="images/images/field-test-equipment.jpg"
+            <img src="images/field-tests/equipment.jpg"
               alt="Hardware and equipment prepared for field deployment" />
             <div class="field-photo-caption">Hardware and equipment prepared for field deployment</div>
           </div>
           <div class="field-photo-item">
             <img
-              src="images/images/field-test-from-mount-ainslie-looking-out-to-hume-field-test-location.jpg"
+              src="images/field-tests/mt-ainslie-view.jpg"
               alt="View from Mt Ainslie toward the Hume field test site" />
             <div class="field-photo-caption">View from Mt Ainslie toward the Hume field test site</div>
           </div>
@@ -837,7 +753,7 @@
       <div class="footer-grid">
 
         <div class="footer-brand">
-          <img src="images/branding/White Logo.png" alt="Local Hazard Network" class="footer-logo" />
+          <img src="images/branding/white-logo.png" alt="Local Hazard Network" class="footer-logo" />
           <p>
             An ENGN4300 Capstone Design Project at the Australian National University,
             School of Engineering / College of Systems and Society. Part of the
@@ -894,6 +810,56 @@
   </footer>
 
   <script>
+    // Fetch and populate updates dynamically
+    fetch('updates.json')
+      .then(response => response.json())
+      .then(updates => {
+        if (!updates || updates.length === 0) return;
+
+        const latestContainer = document.getElementById("latest-update-container");
+        const archiveContainer = document.getElementById("archived-updates-container");
+
+        const buildCardHTML = (update) => {
+          let imageHTML = "";
+          if (update.image) {
+            imageHTML = `
+              <div class="update-image-wrap">
+                <img src="${update.image}" alt="${update.imageAlt || ''}" style="border-radius: 16px;" />
+                ${update.imageCaption ? `<div class="update-image-caption">${update.imageCaption}</div>` : ''}
+              </div>
+            `;
+          }
+
+          return `
+            <div class="update-card">
+              <div class="update-content">
+                <div class="update-meta">
+                  <span class="update-date">${update.date}</span>
+                  <span class="update-tag">${update.tag}</span>
+                </div>
+                <h3 class="update-title">${update.title}</h3>
+                <p class="update-body">${update.body}</p>
+              </div>
+              ${imageHTML}
+            </div>
+          `;
+        };
+
+        // Render latest update
+        latestContainer.innerHTML = buildCardHTML(updates[0]);
+
+        // Render remaining updates in the archive
+        if (updates.length > 1) {
+          archiveContainer.innerHTML = updates.slice(1).map(buildCardHTML).join('');
+        } else {
+          // Hide the archive element if there is only 1 update
+          const archiveElement = document.querySelector(".updates-archive");
+          if (archiveElement) archiveElement.style.display = "none";
+        }
+      })
+      .catch(err => console.error("Error loading updates:", err));
+
+    // Accordion slide animation for updates archive
     document.querySelectorAll('.updates-archive').forEach(function (details) {
       var list = details.querySelector('.updates-archive-list');
 
