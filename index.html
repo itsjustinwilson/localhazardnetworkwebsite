@@ -29,6 +29,41 @@
 <body>
 
   <!-- ============================================================
+       AUDIT BANNER (DISMISSIBLE)
+       ============================================================ -->
+  <div class="audit-banner" id="audit-banner" style="display: none;">
+    <div class="container audit-banner-container">
+      <div class="audit-banner-content">
+        <span class="audit-banner-text">
+          For Shadows and Tutors, to aid in reviewing our project for Audit 3, please use <a
+            href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/_layouts/15/Doc.aspx?sourcedoc=%7BD920FB8B-0963-40C9-8F95-9EA5E74DB0DE%7D&file=Audit%203%20Guide%20-%20Shadow%20and%20Tutor.docx&action=default&mobileredirect=true"
+            target="_blank" rel="noopener" class="audit-banner-link">this guide</a>.
+        </span>
+      </div>
+      <button class="audit-banner-close" id="audit-banner-close" aria-label="Dismiss banner">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Inline check to prevent layout shift before full load
+    (function () {
+      if (!localStorage.getItem('audit-banner-dismissed')) {
+        const banner = document.getElementById('audit-banner');
+        if (banner) {
+          banner.style.display = 'block';
+          document.documentElement.classList.add('has-audit-banner');
+        }
+      }
+    })();
+  </script>
+
+  <!-- ============================================================================
        TOP BAR
        ============================================================ -->
   <!-- <div class="topbar">
@@ -344,7 +379,7 @@
 
       <!-- Field Test Photo Gallery -->
       <div class="field-photo-section">
-        <h3 class="field-photo-heading">Field Testing — In Action</h3>
+        <h3 class="field-photo-heading">Field Testing</h3>
         <div class="field-photo-grid">
           <div class="field-photo-item">
             <img src="images/field-tests/antennae-testing.jpg"
@@ -1104,6 +1139,43 @@
         }
       });
     });
+
+    // Audit banner interactive control and dynamic layout calculations
+    (function () {
+      const banner = document.getElementById('audit-banner');
+      if (!banner || localStorage.getItem('audit-banner-dismissed')) return;
+
+      function updateBannerHeight() {
+        if (banner.style.display !== 'none') {
+          const height = banner.offsetHeight;
+          document.documentElement.style.setProperty('--banner-height', height + 'px');
+          document.documentElement.style.setProperty('--sticky-header-height', (height + 62) + 'px');
+        }
+      }
+
+      // Initial calculation
+      updateBannerHeight();
+
+      // Recalculate on window load and resize to handle image loads or layout changes
+      window.addEventListener('load', updateBannerHeight);
+      window.addEventListener('resize', updateBannerHeight);
+
+      // Close button event
+      const closeBtn = document.getElementById('audit-banner-close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+          banner.style.opacity = '0';
+          banner.style.marginTop = '-' + banner.offsetHeight + 'px';
+          document.documentElement.classList.remove('has-audit-banner');
+          document.documentElement.style.removeProperty('--banner-height');
+          document.documentElement.style.setProperty('--sticky-header-height', '62px');
+          localStorage.setItem('audit-banner-dismissed', 'true');
+          setTimeout(() => {
+            banner.style.display = 'none';
+          }, 200); // matches the CSS transition time
+        });
+      }
+    })();
   </script>
 </body>
 
