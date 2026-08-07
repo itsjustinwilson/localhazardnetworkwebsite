@@ -267,136 +267,174 @@
   <section class="section section--alt" id="workstreams">
     <div class="container">
       <!-- <span class="section-label">Project Structure</span> -->
-      <h2 class="section-title">Phase 1: Design Decision Report Workstreams</h2>
-      <p class="section-desc">
-        The first phase of the project runs three parallel workstreams, each tackling a distinct
-        technical challenge. The second phase integrates their outputs into a unified, deployable prototype.
-      </p>
 
-      <div class="workstreams-grid">
-        <!-- WS1 -->
-        <div class="ws-card">
-          <div class="ws-number">Workstream 1</div>
-          <h3>Communication Network</h3>
-          <p>
-            Investigation and small-scale testing of MeshCore as the primary communication
-            network for emergency data transfer in rural areas.
-          </p>
-          <ul class="ws-list">
-            <li>Small-scale MeshCore network testing</li>
-            <li>Communication range &amp; reliability evaluation</li>
-            <li>Software considerations for embedded development (Rust vs. C)</li>
-            <li>Exploring the MQTT protocol for data transmission</li>
-            <li>Ensuring ACMA compliance</li>
-          </ul>
-          <a href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Workstreams/Network/Network%20Workstream%20Report.docx?d=w121a6819310b4d7c88bce63a03cd1ede&csf=1&web=1&e=pTTzkt"
-            class="btn ws-report-btn" target="_blank" rel="noopener">
-            📄 View Report
-          </a>
-        </div>
-
-        <!-- WS2 -->
-        <div class="ws-card">
-          <div class="ws-number">Workstream 2</div>
-          <h3>Sensor and Hazard Assessment</h3>
-          <p>
-            Feasibility study and options assessment of consumer-off-the-shelf (COTS) components
-            to be used in the multi-hazard sensor nodes. Focuses on selecting appropriate
-            sensors for the range of hazards prevalent in rural NSW.
-          </p>
-          <ul class="ws-list">
-            <li>Research of environmental hazards (flooding, bushfire, landslide, storm, drought)</li>
-            <li>COTS sensor suitability assessment (rainfall, relative humidity, temperature, wind)</li>
-            <li>Component selection and options assessment report</li>
-          </ul>
-          <a href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Workstreams/Sensors/Sensors%20Workstream%20Report.docx?d=w22f95f7639d1485a9288ef0db2ee2e36&csf=1&web=1&e=c1RvA1"
-            class="btn ws-report-btn" target="_blank" rel="noopener">
-            📄 View Report
-          </a>
-        </div>
-
-        <!-- WS3 -->
-        <div class="ws-card">
-          <div class="ws-number">Workstream 3</div>
-          <h3>Power &amp; Enclosure</h3>
-          <p>
-            Preliminary research of the physical harness for securing the sensor design to various
-            landscapes, alongside power supply and regulation design to ensure low power
-            consumption and long-lasting battery life in the field.
-          </p>
-          <ul class="ws-list">
-            <li>Battery, solar panel, and enclosure recommendations</li>
-            <li>Solar charging and battery life optimisation</li>
-            <li>Environmental durability and weatherproofing</li>
-            <li>Physical enclosure and mounting harness design</li>
-          </ul>
-          <a href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Workstreams/Power%20and%20Enclosure/Power%20%26%20Enclosure%20Workstream%20Report.docx?d=wcfb419bdc56e4f87bb83c0fd8bece541&csf=1&web=1&e=0gGwGI"
-            class="btn ws-report-btn" target="_blank" rel="noopener">
-            📄 View Report
-          </a>
-        </div>
-      </div>
-
-      <!-- Scope Table -->
-      <!-- <div style="margin-top: 40px;">
-        <h3 style="font-size:1.1rem; font-weight:700; color:var(--text); margin-bottom:16px;">
-          Project Scope Summary
-        </h3>
-        <div class="scope-table-wrapper">
-          <table class="scope-table">
-            <thead>
-              <tr>
-                <th>Area</th>
-                <th>In Scope</th>
-                <th>Out of Scope</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>General</strong></td>
-                <td>Testing within ACT; range, sensor, reliability, battery testing; desktop studies; liaison via project host</td>
-                <td>Testing outside ACT; regular site visits; integration with official emergency alert systems; permanent installation</td>
-              </tr>
-              <tr>
-                <td><strong>WS1 – Network</strong></td>
-                <td>Small-scale MeshCore testing; LoRa platform research; range &amp; reliability evaluation</td>
-                <td>Developing new communication networks; large-scale NSW testing; integration with existing networks</td>
-              </tr>
-              <tr>
-                <td><strong>WS2 – Sensors</strong></td>
-                <td>COTS sensor options assessment; hazard research (flood, bushfire, landslide, storm, drought); installation requirements</td>
-                <td>Uncommon Australian hazards; deployment of permanent stations; development of new sensors</td>
-              </tr>
-              <tr>
-                <td><strong>WS3 – Enclosure &amp; Power</strong></td>
-                <td>Physical harness design; 3D-printed enclosures; power supply &amp; regulation; solar charging; weatherproofing</td>
-                <td>Large-scale manufacturing; permanent infrastructure installation; long-term maintenance</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div> -->
-
-      <!-- Field Test Photo Gallery -->
-      <div class="field-photo-section">
-        <h3 class="field-photo-heading">Field Testing</h3>
-        <div class="field-photo-grid">
-          <div class="field-photo-item">
-            <img src="images/field-tests/antennae-testing.jpg"
-              alt="Antenna testing during MeshCore network field evaluation" />
-            <div class="field-photo-caption">Antenna testing during MeshCore network field evaluation</div>
+      <!-- Phase 1 Collapsible Block -->
+      <details class="phase-details">
+        <summary class="phase-summary">
+          <div class="phase-summary-content">
+            <h2 class="section-title">Phase 1: Design Decision Report Workstreams</h2>
+            <p class="section-desc">
+              The first phase of the project runs three parallel workstreams, each tackling a distinct
+              technical challenge. The second phase integrates their outputs into a unified, deployable prototype.
+            </p>
           </div>
-          <div class="field-photo-item">
-            <img src="images/field-tests/equipment.jpg" alt="Hardware and equipment prepared for field deployment" />
-            <div class="field-photo-caption">Hardware and equipment prepared for field deployment</div>
+          <div class="phase-chevron">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </div>
-          <div class="field-photo-item">
-            <img src="images/field-tests/mt-ainslie-view.jpg"
-              alt="View from Mt Ainslie toward the Hume field test site" />
-            <div class="field-photo-caption">View from Mt Ainslie toward the Hume field test site</div>
+        </summary>
+        <div class="phase-content">
+          <div class="workstreams-grid">
+            <!-- WS1 -->
+            <div class="ws-card">
+              <div class="ws-number">Workstream 1</div>
+              <h3>Communication Network</h3>
+              <p>
+                Investigation and small-scale testing of MeshCore as the primary communication
+                network for emergency data transfer in rural areas.
+              </p>
+              <ul class="ws-list">
+                <li>Small-scale MeshCore network testing</li>
+                <li>Communication range &amp; reliability evaluation</li>
+                <li>Software considerations for embedded development (Rust vs. C)</li>
+                <li>Exploring the MQTT protocol for data transmission</li>
+                <li>Ensuring ACMA compliance</li>
+              </ul>
+              <a href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Workstreams/Network/Network%20Workstream%20Report.docx?d=w121a6819310b4d7c88bce63a03cd1ede&csf=1&web=1&e=pTTzkt"
+                class="btn ws-report-btn" target="_blank" rel="noopener">
+                📄 View Report
+              </a>
+            </div>
+
+            <!-- WS2 -->
+            <div class="ws-card">
+              <div class="ws-number">Workstream 2</div>
+              <h3>Sensor and Hazard Assessment</h3>
+              <p>
+                Feasibility study and options assessment of consumer-off-the-shelf (COTS) components
+                to be used in the multi-hazard sensor nodes. Focuses on selecting appropriate
+                sensors for the range of hazards prevalent in rural NSW.
+              </p>
+              <ul class="ws-list">
+                <li>Research of environmental hazards (flooding, bushfire, landslide, storm, drought)</li>
+                <li>COTS sensor suitability assessment (rainfall, relative humidity, temperature, wind)</li>
+                <li>Component selection and options assessment report</li>
+              </ul>
+              <a href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Workstreams/Sensors/Sensors%20Workstream%20Report.docx?d=w22f95f7639d1485a9288ef0db2ee2e36&csf=1&web=1&e=c1RvA1"
+                class="btn ws-report-btn" target="_blank" rel="noopener">
+                📄 View Report
+              </a>
+            </div>
+
+            <!-- WS3 -->
+            <div class="ws-card">
+              <div class="ws-number">Workstream 3</div>
+              <h3>Power &amp; Enclosure</h3>
+              <p>
+                Preliminary research of the physical harness for securing the sensor design to various
+                landscapes, alongside power supply and regulation design to ensure low power
+                consumption and long-lasting battery life in the field.
+              </p>
+              <ul class="ws-list">
+                <li>Battery, solar panel, and enclosure recommendations</li>
+                <li>Solar charging and battery life optimisation</li>
+                <li>Environmental durability and weatherproofing</li>
+                <li>Physical enclosure and mounting harness design</li>
+              </ul>
+              <a href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Workstreams/Power%20and%20Enclosure/Power%20%26%20Enclosure%20Workstream%20Report.docx?d=wcfb419bdc56e4f87bb83c0fd8bece541&csf=1&web=1&e=0gGwGI"
+                class="btn ws-report-btn" target="_blank" rel="noopener">
+                📄 View Report
+              </a>
+            </div>
+          </div>
+
+          <!-- Field Test Photo Gallery -->
+          <div class="field-photo-section">
+            <h3 class="field-photo-heading">Field Testing</h3>
+            <div class="field-photo-grid">
+              <div class="field-photo-item">
+                <img src="images/field-tests/antennae-testing.jpg"
+                  alt="Antenna testing during MeshCore network field evaluation" />
+                <div class="field-photo-caption">Antenna testing during MeshCore network field evaluation</div>
+              </div>
+              <div class="field-photo-item">
+                <img src="images/field-tests/equipment.jpg"
+                  alt="Hardware and equipment prepared for field deployment" />
+                <div class="field-photo-caption">Hardware and equipment prepared for field deployment</div>
+              </div>
+              <div class="field-photo-item">
+                <img src="images/field-tests/mt-ainslie-view.jpg"
+                  alt="View from Mt Ainslie toward the Hume field test site" />
+                <div class="field-photo-caption">View from Mt Ainslie toward the Hume field test site</div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </details>
+
+      <!-- Phase 2 Collapsible Block -->
+      <details class="phase-details" open>
+        <summary class="phase-summary">
+          <div class="phase-summary-content">
+            <h2 class="section-title">Phase 2: Prototyping and Testing</h2>
+            <p class="section-desc">
+              Combining the outputs of Phase 1's three workstreams into a unified, deployable hazard detection
+              prototype.
+            </p>
+          </div>
+          <div class="phase-chevron">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        </summary>
+        <div class="phase-content">
+          <div class="workstreams-grid phase-2-grid">
+            <!-- WS1 -->
+            <div class="ws-card">
+              <div class="ws-number">Workstream 1</div>
+              <h3>Firmware</h3>
+              <p>
+                Development of embedded software to interface with sensors, manage power states, and handle
+                communication over the MeshCore network on the RAK platform.
+              </p>
+              <ul class="ws-list">
+                <li>Sensor driver integration and data handling</li>
+                <li>Power management and low-power sleep states</li>
+                <li>MeshCore network integration and payload handling</li>
+                <li>Local bench testing of firmware builds</li>
+              </ul>
+              <a href="https://anu365.sharepoint.com/:f:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Prototyping%20%26%20Testing/Firmware?d=w3c4c0ffb26e343fc9ced6c7ab52d782a&csf=1&web=1&e=ly2xQt"
+                class="btn ws-report-btn" target="_blank" rel="noopener">
+                📁 View Team Folder
+              </a>
+            </div>
+
+            <!-- WS2 -->
+            <div class="ws-card">
+              <div class="ws-number">Workstream 2</div>
+              <h3>Prototyping</h3>
+              <p>
+                Physical assembly and integration of sensor, power, and enclosure subsystems into a working hazard
+                detection node, ready for field deployment.
+              </p>
+              <ul class="ws-list">
+                <li>Hardware assembly and subsystem integration</li>
+                <li>Enclosure and mounting harness assembly</li>
+                <li>Local and field testing of the assembled prototype</li>
+                <li>Iteration based on Test and Evaluation Plan results</li>
+              </ul>
+              <a href="https://anu365.sharepoint.com/:f:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Prototyping%20%26%20Testing/Prototyping?d=w3ec6bcb610ed41ff9f75e0dd661d0cba&csf=1&web=1&e=VHa8aM"
+                class="btn ws-report-btn" target="_blank" rel="noopener">
+                📁 View Team Folder
+              </a>
+            </div>
+          </div>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -517,17 +555,17 @@
             <span class="milestone-tag completed">Completed</span>
             <span class="milestone-week">Semester 1 &mdash; Week 4</span>
           </div>
-          <h3>Phase 1 — Orientation</h3>
+          <h3>1 — Orientation</h3>
           <p>
             Established team communications, reviewed previous project repository and handover
             documentation, made contact with project host, and produced initial planning documents.
           </p>
-          <div class="milestone-deliverables">
+          <!-- <div class="milestone-deliverables">
             <span>Concept of Operations v1.0</span>
             <span>Project Management Plan v1.0</span>
             <span>Presentation</span>
             <span>Landing Page</span>
-          </div>
+          </div> -->
         </div>
 
         <div class="milestone completed">
@@ -535,16 +573,16 @@
             <span class="milestone-tag completed">Completed</span>
             <span class="milestone-week">Semester 1 &mdash; Week 11</span>
           </div>
-          <h3>Phase 2 — Investigation</h3>
+          <h3>2 — Investigation</h3>
           <p>
             Research into communication platforms (Meshtastic, MeshCore, and alternatives) and
             hazard detection feasibility. All devices for detection to be decided by this milestone.
           </p>
-          <div class="milestone-deliverables">
+          <!-- <div class="milestone-deliverables">
             <span>Systems Engineering Governance</span>
             <span>Technical Artifacts</span>
             <span>Test &amp; Evaluation Plan</span>
-          </div>
+          </div> -->
         </div>
 
         <div class="milestone active">
@@ -552,16 +590,16 @@
             <span class="milestone-tag active">In Progress</span>
             <span class="milestone-week">Semester 2 &mdash; Week 4</span>
           </div>
-          <h3>Phase 3 — Integration</h3>
+          <h3>3 — Integration</h3>
           <p>
             First prototypes of hazard detection device(s) complete and ready for field testing
             within the ACT region. Field testing plans established and underway.
           </p>
-          <div class="milestone-deliverables">
+          <!-- <div class="milestone-deliverables">
             <span>System Prototype</span>
             <span>Field Testing Plan</span>
             <span>Updated T&amp;E Plan</span>
-          </div>
+          </div> -->
         </div>
 
         <div class="milestone">
@@ -569,17 +607,17 @@
             <span class="milestone-tag upcoming">Upcoming</span>
             <span class="milestone-week">Semester 2 &mdash; Week 11</span>
           </div>
-          <h3>Phase 4 — Evaluation</h3>
+          <h3>4 — Evaluation</h3>
           <p>
             All field testing complete, findings report drafted. Team reflections documented
             for future project onboarding and handover.
           </p>
-          <div class="milestone-deliverables">
+          <!-- <div class="milestone-deliverables">
             <span>Findings Report</span>
             <span>Poster</span>
             <span>Video Pitch</span>
             <span>Handover Documentation</span>
-          </div>
+          </div> -->
         </div>
 
       </div>
@@ -703,7 +741,7 @@
 
       <div class="deliverables-grid">
         <a class="deliverable-item deliverable-item--primary"
-          href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Audits/Audit%202/Concept%20of%20Operations.docx?d=w51f9f8e7baa64e678b7b202a949ac278&csf=1&web=1&e=UumYg4"
+          href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Audits/Audit%203/Concept%20of%20Operations.docx?d=w435b33f3d20447d0b489eeda4df4c07a&csf=1&web=1&e=invOeD"
           target="_blank" rel="noopener">
           <div class="deliverable-icon">📄</div>
           <div>
@@ -721,7 +759,7 @@
           </div>
         </a>
         <a class="deliverable-item deliverable-item--secondary"
-          href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Audits/Audit%202/Project%20Management%20Plan.docx?d=wd528586ca7064cfda25aef0fa5562a98&csf=1&web=1&e=Kguqfw"
+          href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Audits/Audit%203/Project%20Management%20Plan.docx?d=wcec34d4b68cb498db50d974a03d2ab06&csf=1&web=1&e=R9FOJq"
           target="_blank" rel="noopener">
           <div class="deliverable-icon">📋</div>
           <div>
@@ -1108,6 +1146,53 @@
             requestAnimationFrame(function () {
               list.style.maxHeight = list.scrollHeight + 'px';
               list.addEventListener('transitionend', doOpen, { once: true });
+              openTimer = setTimeout(doOpen, 500);
+            });
+          });
+        }
+      });
+    });
+
+    // Accordion slide animation for phase details
+    document.querySelectorAll('.phase-details').forEach(function (details) {
+      var content = details.querySelector('.phase-content');
+      if (!content) return;
+
+      details.addEventListener('click', function (e) {
+        // If clicking a link or button inside summary, don't toggle
+        if (e.target.closest('a') || e.target.closest('button')) return;
+        if (!e.target.closest('summary')) return;
+        e.preventDefault();
+
+        if (details.open) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          var closeTimer;
+          var doClose = function () {
+            clearTimeout(closeTimer);
+            content.removeEventListener('transitionend', doClose);
+            details.removeAttribute('open');
+            content.style.maxHeight = '';
+          };
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              content.style.maxHeight = '0';
+              content.addEventListener('transitionend', doClose, { once: true });
+              closeTimer = setTimeout(doClose, 500);
+            });
+          });
+        } else {
+          details.setAttribute('open', '');
+          content.style.maxHeight = '0';
+          var openTimer;
+          var doOpen = function () {
+            clearTimeout(openTimer);
+            content.removeEventListener('transitionend', doOpen);
+            content.style.maxHeight = '';
+          };
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              content.style.maxHeight = content.scrollHeight + 'px';
+              content.addEventListener('transitionend', doOpen, { once: true });
               openTimer = setTimeout(doOpen, 500);
             });
           });
