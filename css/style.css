@@ -1029,7 +1029,7 @@ img {
   top: 8px;
   bottom: 140px;
   width: 2px;
-  background: linear-gradient(to bottom, var(--gold) 30%, rgba(255, 255, 255, 0.08) 60%);
+  background: linear-gradient(to bottom, var(--gold) 60%, rgba(255, 255, 255, 0.08) 75%);
 }
 
 .milestone {
