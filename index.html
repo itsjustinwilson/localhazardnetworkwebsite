@@ -1084,10 +1084,11 @@
               <div class="update-content">
                 <div class="update-meta">
                   <span class="update-date">${update.date}</span>
-                  <span class="update-tag">${update.tag}</span>
+                  ${update.tag ? `<span class="update-separator">&middot;</span><span class="update-tag">${update.tag}</span>` : ''}
                 </div>
                 <h3 class="update-title">${update.title}</h3>
                 <p class="update-body">${update.body}</p>
+                ${update.author ? `<div class="update-author">- ${update.author}</div>` : ''}
               </div>
               ${imageHTML}
             </div>
