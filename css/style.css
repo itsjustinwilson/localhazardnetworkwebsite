@@ -1094,16 +1094,25 @@ img {
   position: relative;
   padding-left: 32px;
 }
-
-.milestones-timeline::before {
+.milestone:not(:last-child)::after {
   content: '';
   position: absolute;
-  left: 8px;
-  top: 8px;
-  bottom: 140px;
+  left: -24px;
+  top: 13px;
+  bottom: -13px;
   width: 2px;
-  background: linear-gradient(to bottom, var(--gold) 60%, rgba(255, 255, 255, 0.08) 75%);
+  background: rgba(255, 255, 255, 0.08);
+  z-index: 0;
 }
+
+.milestone.completed:not(:last-child)::after {
+  background: var(--gold);
+}
+
+.milestone.active:not(:last-child)::after {
+  background: linear-gradient(to bottom, var(--teal), rgba(255, 255, 255, 0.08));
+}
+
 
 .milestone {
   position: relative;
