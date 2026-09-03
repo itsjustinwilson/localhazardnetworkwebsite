@@ -1,5 +1,15 @@
 [
   {
+    "date": "2 September 2026",
+    "tag": "Sem 2 · Week 6",
+    "title": "",
+    "author": "Justin W",
+    "body": "Heading into the mid-semester break, we are well into developing the firmware for our sensor node, currently with a working gas, temperature, humidity, and pressure sensor. We have also depeloped a comprehensive CAD model for the entire node and will begin to assemble the physical prototype during break. During the break we also aim to complete all the testing and evaluation.",
+    "image": "images/prototyping/firmware-soldering.jpg",
+    "imageAlt": "Kyle and Ken soldering components",
+    "imageCaption": "Kyle and Ken (Firmware team) soldering components"
+  },
+  {
     "date": "7 August 2026",
     "tag": "Sem 2 · Week 2",
     "title": "",
