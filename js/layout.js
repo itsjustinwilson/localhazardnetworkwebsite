@@ -26,8 +26,6 @@ const HEADER_HTML = `
       <ul class="navbar-nav">
         <li><a href="index.html#about">About</a></li>
         <li><a href="index.html#workstreams">Workstreams</a></li>
-        <li><a href="index.html#focus-areas">Focus Areas</a></li>
-        <li><a href="index.html#milestones">Milestones</a></li>
         <li><a href="index.html#team">Team</a></li>
         <li><a href="index.html#deliverables">Deliverables</a></li>
       </ul>
@@ -235,8 +233,6 @@ const FOOTER_HTML = `
           <ul>
             <li><a href="index.html#about">About the Project</a></li>
             <li><a href="index.html#workstreams">Workstreams</a></li>
-            <li><a href="index.html#focus-areas">Focus Areas</a></li>
-            <li><a href="index.html#milestones">Milestones</a></li>
             <li><a href="index.html#team">Team</a></li>
             <li><a href="index.html#deliverables">Deliverables</a></li>
           </ul>
