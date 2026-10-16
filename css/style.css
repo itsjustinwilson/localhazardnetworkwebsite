@@ -226,8 +226,11 @@ img {
 .audit-banner-content {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
+  flex: 1;
+  text-align: center;
 }
 
 .audit-banner-badge {
