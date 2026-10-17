@@ -17,17 +17,26 @@ function localiseLinks(root) {
   });
 }
 
+const NAV_LINKS = [
+  ['index.html#about', 'About'],
+  ['index.html#hazards', 'Hazards'],
+  ['index.html#how-it-works', 'How It Works'],
+  ['index.html#journey', 'Journey'],
+  ['index.html#team', 'Team'],
+  ['index.html#outputs', 'Outputs'],
+];
+
 const HEADER_HTML = `
   <nav class="navbar">
     <div class="container">
       <a href="index.html" class="navbar-brand">
         <img src="images/branding/white-logo.png" alt="Local Hazards Network" class="navbar-logo" />
       </a>
+      <button class="navbar-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
       <ul class="navbar-nav">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#workstreams">Workstreams</a></li>
-        <li><a href="index.html#team">Team</a></li>
-        <li><a href="index.html#deliverables">Deliverables</a></li>
+        ${NAV_LINKS.map(([href, label]) => `<li><a href="${href}">${label}</a></li>`).join('')}
       </ul>
     </div>
   </nav>
@@ -46,21 +55,6 @@ const FOOTER_HTML = `
       <svg class="footer-landscape-svg" viewBox="0 -20 1440 180" preserveAspectRatio="xMinYMax slice"
         xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <!-- Sky Gradients -->
-          <linearGradient id="sky-normal" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#0d2b45" />
-            <stop offset="100%" stop-color="#0b243a" />
-          </linearGradient>
-          <linearGradient id="sky-storm" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#0d2b45" />
-            <stop offset="100%" stop-color="#0f172a" />
-          </linearGradient>
-          <linearGradient id="sky-bushfire" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#0d2b45" />
-            <stop offset="50%" stop-color="#7c2d12" />
-            <stop offset="100%" stop-color="#451a03" />
-          </linearGradient>
-
           <!-- LED Glow Filter -->
           <filter id="led-glow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="3" result="blur" />
@@ -77,17 +71,17 @@ const FOOTER_HTML = `
         <g class="clouds-group">
           <path class="cloud cloud-1"
             d="M200 70 a20 20 0 0 1 30 -5 a25 25 0 0 1 40 5 a20 20 0 0 1 10 15 a10 10 0 0 1 -10 10 h-70 a10 10 0 0 1 -10 -15 a15 15 0 0 1 10 -10 z"
-            fill="rgba(255,255,255,0.08)" />
+            fill="rgba(255,255,255,0.75)" />
           <path class="cloud cloud-2"
             d="M500 50 a15 15 0 0 1 20 -3 a20 20 0 0 1 30 3 a15 15 0 0 1 8 12 a8 8 0 0 1 -8 8 h-50 a8 8 0 0 1 -8 -12 a12 12 0 0 1 8 -8 z"
-            fill="rgba(255,255,255,0.05)" />
+            fill="rgba(255,255,255,0.6)" />
           <path class="cloud cloud-3"
             d="M900 65 a18 18 0 0 1 25 -4 a22 22 0 0 1 35 4 a18 18 0 0 1 9 13 a9 9 0 0 1 -9 9 h-60 a9 9 0 0 1 -9 -13 a14 14 0 0 1 9 -9 z"
-            fill="rgba(255,255,255,0.07)" />
+            fill="rgba(255,255,255,0.7)" />
         </g>
 
         <!-- Sun (Normal) / Fire Glow (Bushfire) -->
-        <circle class="sun-orb" cx="1300" cy="50" r="15" fill="#fef08a" opacity="0.15" />
+        <circle class="sun-orb" cx="1300" cy="45" r="18" fill="#FFC000" />
 
         <!-- Rain Group (Storm) -->
         <g class="rain-group" opacity="0">
@@ -129,29 +123,64 @@ const FOOTER_HTML = `
 
         <!-- Parallax Hills -->
         <!-- Back Hill -->
-        <path class="hill-back" d="M0 70 Q 220 35, 480 75 T 950 65 T 1440 80 L 1440 180 L 0 180 Z" fill="#0b243a" />
+        <path class="hill-back" d="M0 70 Q 220 35, 480 75 T 950 65 T 1440 80 L 1440 180 L 0 180 Z" fill="#114C7E" />
 
         <!-- Mid Hill -->
-        <path class="hill-mid" d="M0 100 Q 320 65, 620 95 T 1220 85 T 1440 110 L 1440 180 L 0 180 Z" fill="#092033" />
+        <path class="hill-mid" d="M0 100 Q 320 65, 620 95 T 1220 85 Q 1330 70, 1440 92 L 1440 180 L 0 180 Z" fill="#0D3B5E" />
 
-        <!-- Front Hill (Matches footer background var(--navy-deep)) -->
-        <path class="hill-front" d="M0 130 Q 260 105, 560 135 T 1120 115 T 1440 140 L 1440 180 L 0 180 Z"
-          fill="#081d2e" />
+        <!-- Front Hill (matches footer background var(--navy)) -->
+        <path class="hill-front" d="M0 130 Q 260 105, 560 135 T 1120 115 Q 1280 84, 1440 108 L 1440 180 L 0 180 Z"
+          fill="#0D2B45" />
 
-        <!-- Eucalyptus trees on Mid Hill -->
-        <g class="mid-trees" fill="#071929">
-          <path d="M150 100 L160 100 L157 85 L163 85 L155 65 L147 85 L153 85 Z" />
-          <path d="M220 103 L228 103 L225 90 L230 90 L224 72 L218 90 L222 90 Z" />
-          <path d="M600 95 L608 95 L605 81 L610 81 L604 63 L598 81 L602 81 Z" />
-          <path d="M630 96 L638 96 L635 82 L640 82 L634 64 L628 82 L632 82 Z" />
-          <path d="M820 93 L828 93 L825 79 L830 79 L824 61 L818 79 L822 79 Z" />
-          <path d="M850 94 L858 94 L855 80 L860 80 L854 62 L848 80 L852 80 Z" />
-          <path d="M1200 96 L1208 96 L1205 83 L1210 83 L1204 67 L1198 83 L1202 83 Z" />
-          <path d="M1270 94 L1278 94 L1275 80 L1280 80 L1274 62 L1268 80 L1272 80 Z" />
+        <!-- Distant trees on the Mid Hill (poster style) -->
+        <g class="mid-trees" fill="#0C3150" stroke="#0C3150">
+          <line x1="156.4" y1="88.7" x2="156.4" y2="80.1" stroke-width="0.9" />
+          <circle cx="156.9" cy="75.1" r="3.6" />
+          <circle cx="153.6" cy="78.1" r="3" />
+          <circle cx="159.9" cy="77.6" r="3.2" />
+          <circle cx="154.2" cy="72.8" r="2.6" />
+          <line x1="170.3" y1="87.9" x2="170.3" y2="77.5" stroke-width="0.9" />
+          <circle cx="169.7" cy="72.5" r="4" />
+          <circle cx="167" cy="74.8" r="2.8" />
+          <circle cx="173.8" cy="74.9" r="3.3" />
+          <line x1="181.2" y1="87.3" x2="181.2" y2="78.7" stroke-width="0.8" />
+          <circle cx="181.7" cy="74.7" r="3" />
+          <circle cx="178.4" cy="76.7" r="2.7" />
+          <circle cx="184.1" cy="76.4" r="2.4" />
+          <circle cx="182.9" cy="72.4" r="2" />
+          <line x1="745.2" y1="106.5" x2="745.2" y2="98.9" stroke-width="0.8" />
+          <circle cx="745.3" cy="94.8" r="3.2" />
+          <circle cx="742.5" cy="96.7" r="2.5" />
+          <circle cx="747.8" cy="96.5" r="2.7" />
+          <line x1="754.8" y1="106.9" x2="754.8" y2="97.4" stroke-width="0.8" />
+          <circle cx="754.6" cy="93.2" r="3" />
+          <circle cx="752.2" cy="95.5" r="2.6" />
+          <circle cx="757.4" cy="95" r="2.9" />
+          <circle cx="756.6" cy="90.9" r="1.9" />
+          <line x1="765.8" y1="107.4" x2="765.8" y2="96.9" stroke-width="1" />
+          <circle cx="765.2" cy="91.8" r="4" />
+          <circle cx="762.7" cy="94.7" r="3.4" />
+          <circle cx="769.1" cy="94.9" r="3.2" />
+          <circle cx="763.5" cy="88.8" r="2.5" />
+          <line x1="776.2" y1="107.9" x2="776.2" y2="100.9" stroke-width="0.7" />
+          <circle cx="776.4" cy="97.2" r="3.1" />
+          <circle cx="774" cy="98.9" r="2.1" />
+          <circle cx="778.9" cy="99" r="2.5" />
+          <circle cx="774.8" cy="95" r="1.9" />
+          <line x1="1174.4" y1="92.7" x2="1174.4" y2="84.2" stroke-width="0.7" />
+          <circle cx="1174.4" cy="80.4" r="2.9" />
+          <circle cx="1172.4" cy="82.3" r="2.3" />
+          <circle cx="1176.4" cy="82.4" r="2.5" />
+          <circle cx="1175.7" cy="78.5" r="1.8" />
+          <line x1="1186.5" y1="91.2" x2="1186.5" y2="83.1" stroke-width="0.7" />
+          <circle cx="1186.8" cy="79.3" r="2.7" />
+          <circle cx="1184.4" cy="81.3" r="2.6" />
+          <circle cx="1188.8" cy="81.2" r="2.5" />
+          <circle cx="1187.7" cy="77.2" r="2.1" />
         </g>
 
-        <!-- Foreground Details (Fence, Trees, Sensor Node) running from left edge (x=0) to x=560 -->
-        <g class="fence" stroke="#05131f" stroke-width="1.5" fill="none">
+        <!-- Foreground Details (Fence, Sensor Node) running from left edge (x=0) to x=560 -->
+        <g class="fence" stroke="#081D2E" stroke-width="1.5" fill="none">
           <!-- Upper wire (straight lines) -->
           <path d="M0 125 L80 117 L160 112 L240 110 L320 112 L400 116 L480 122 L560 130" />
           <!-- Lower wire (straight lines) -->
@@ -168,40 +197,101 @@ const FOOTER_HTML = `
           <line x1="560" y1="127" x2="560" y2="149" stroke-width="2.5" />
         </g>
 
-        <!-- Sensor Node mounted on post 480 -->
-        <g class="sensor-node">
-          <rect x="475" y="117" width="10" height="13" rx="1" fill="#475569" stroke="#1e293b" stroke-width="1" />
-          <line x1="480" y1="117" x2="480" y2="105" stroke="#94a3b8" stroke-width="1" />
-          <circle cx="480" cy="105" r="1.2" fill="#94a3b8" />
-          <line x1="473" y1="116" x2="487" y2="114" stroke="#0f172a" stroke-width="1.8" />
-          <circle class="sensor-led" cx="480" cy="123" r="1.5" fill="#22c55e" filter="url(#led-glow)" />
+        <!-- Sensor Node mounted on post 480 (matches images/sensor-node-diagram.png) -->
+        <!-- Scaled to 80% about the mast base (480, 144) -->
+        <g class="sensor-node" transform="translate(96 28.8) scale(0.8)">
+          <!-- Mast -->
+          <rect x="479" y="102" width="2.2" height="42" fill="#E2E8F0" />
+          <!-- Anemometer -->
+          <line x1="480.1" y1="99" x2="480.1" y2="93" stroke="#475569" stroke-width="1" />
+          <line x1="477" y1="92.6" x2="483.2" y2="92.6" stroke="#475569" stroke-width="0.8" />
+          <circle cx="477" cy="92.6" r="1.1" fill="#475569" />
+          <circle cx="480.1" cy="92" r="1.1" fill="#475569" />
+          <circle cx="483.2" cy="92.6" r="1.1" fill="#475569" />
+          <!-- Solar panel -->
+          <polygon points="465.5,100 467.5,95.6 474.6,95 475.4,99.4" fill="#6B7FBF" stroke="#E2E8F0" stroke-width="0.6" />
+          <!-- Logger box -->
+          <rect x="485" y="94.2" width="7" height="5" fill="#E5E7EB" stroke="#94A3B8" stroke-width="0.4" />
+          <!-- Mounting tray and crossbar -->
+          <rect x="464.8" y="99.3" width="30.6" height="1.5" fill="#111827" />
+          <rect x="464" y="100.6" width="32" height="3" rx="1.5" fill="#E2E8F0" />
+          <!-- Radiation shield -->
+          <rect x="474" y="103.6" width="4.2" height="4.6" rx="0.8" fill="#E2E8F0" />
+          <g stroke="#94A3B8" stroke-width="0.4">
+            <line x1="474" y1="105.1" x2="478.2" y2="105.1" />
+            <line x1="474" y1="106.6" x2="478.2" y2="106.6" />
+          </g>
+          <!-- Electronics enclosure -->
+          <rect x="481.2" y="104" width="3.8" height="8" rx="0.4" fill="#E5E7EB" stroke="#94A3B8" stroke-width="0.4" />
+          <g class="sensor-led">
+            <circle cx="483.1" cy="106.2" r="2.4" fill="#ef4444" opacity="0.3" />
+            <circle cx="483.1" cy="106.2" r="1.3" fill="#ef4444" />
+          </g>
         </g>
-
-        <!-- Foreground Tree Silhouettes (positioned for balance and left-align mobile framing) -->
-        <g class="front-trees" fill="#040e17">
-          <!-- Far Left Tree -->
-          <circle cx="100" cy="105" r="12" />
-          <circle cx="93" cy="117" r="10" />
-          <circle cx="107" cy="115" r="10" />
-          <line x1="100" y1="145" x2="100" y2="115" stroke="#040e17" stroke-width="2.5" />
-
-          <!-- Mid-Left Tree (near center-mobile) -->
-          <circle cx="340" cy="102" r="12" />
-          <circle cx="333" cy="114" r="10" />
-          <circle cx="347" cy="112" r="10" />
-          <line x1="340" y1="142" x2="340" y2="112" stroke="#040e17" stroke-width="2.5" />
-
-          <!-- Mid-Right Tree -->
-          <circle cx="750" cy="98" r="12" />
-          <circle cx="743" cy="110" r="10" />
-          <circle cx="757" cy="108" r="10" />
-          <line x1="750" y1="138" x2="750" y2="108" stroke="#040e17" stroke-width="2.5" />
-
-          <!-- Far Right Tree -->
-          <circle cx="1200" cy="106" r="12" />
-          <circle cx="1193" cy="118" r="10" />
-          <circle cx="1207" cy="116" r="10" />
-          <line x1="1200" y1="146" x2="1200" y2="116" stroke="#040e17" stroke-width="2.5" />
+        <!-- Trees on the Front Hill (poster style) -->
+        <g class="front-trees" fill="#081D2E" stroke="#081D2E">
+          <line x1="35.8" y1="128.8" x2="35.8" y2="114.2" stroke-width="1.5" />
+          <circle cx="35.8" cy="106" r="6.4" />
+          <circle cx="31" cy="109.8" r="5.1" />
+          <circle cx="41.2" cy="109.4" r="5.3" />
+          <line x1="56.7" y1="127.2" x2="56.7" y2="109.3" stroke-width="1.6" />
+          <circle cx="56.1" cy="100.8" r="6.9" />
+          <circle cx="50.5" cy="104.3" r="5.5" />
+          <circle cx="61.7" cy="105.2" r="5.3" />
+          <line x1="70.5" y1="126.3" x2="70.5" y2="112.6" stroke-width="1.5" />
+          <circle cx="71.4" cy="104.8" r="5.7" />
+          <circle cx="65" cy="108.8" r="5.1" />
+          <circle cx="75.1" cy="109.2" r="4.7" />
+          <line x1="276.9" y1="120.8" x2="276.9" y2="109.2" stroke-width="1.2" />
+          <circle cx="276.8" cy="102.6" r="4.8" />
+          <circle cx="272.8" cy="106.4" r="4.1" />
+          <circle cx="281.1" cy="106" r="4.6" />
+          <line x1="291.7" y1="121" x2="291.7" y2="108.8" stroke-width="1.3" />
+          <circle cx="291.6" cy="101.7" r="5.6" />
+          <circle cx="286.9" cy="105.9" r="4.3" />
+          <circle cx="296.6" cy="105.8" r="4.8" />
+          <line x1="308" y1="121.3" x2="308" y2="110.2" stroke-width="1.2" />
+          <circle cx="307.6" cy="104" r="4.3" />
+          <circle cx="303.7" cy="107.1" r="3.6" />
+          <circle cx="312.4" cy="107" r="3.7" />
+          <circle cx="306.1" cy="101.4" r="3.2" />
+          <line x1="325.7" y1="121.8" x2="325.7" y2="108" stroke-width="1.3" />
+          <circle cx="325.6" cy="101.1" r="5.6" />
+          <circle cx="321.2" cy="104.3" r="4" />
+          <circle cx="330.6" cy="104.5" r="4.6" />
+          <circle cx="323.7" cy="97.2" r="3.2" />
+          <line x1="602.4" y1="140.9" x2="602.4" y2="124.7" stroke-width="1.4" />
+          <circle cx="602.4" cy="117.5" r="5.6" />
+          <circle cx="598" cy="121.5" r="4.3" />
+          <circle cx="607.2" cy="121.1" r="4.3" />
+          <circle cx="599.3" cy="113.6" r="3.3" />
+          <line x1="618.6" y1="142.1" x2="618.6" y2="132.4" stroke-width="1" />
+          <circle cx="618.6" cy="126.8" r="3.9" />
+          <circle cx="614.9" cy="129.6" r="3.4" />
+          <circle cx="621.8" cy="129.1" r="3.5" />
+          <circle cx="620.5" cy="124.7" r="2.7" />
+          <line x1="944.7" y1="141.2" x2="944.7" y2="127.1" stroke-width="1.4" />
+          <circle cx="944.9" cy="119.7" r="5.8" />
+          <circle cx="940.3" cy="123.8" r="4.6" />
+          <circle cx="949.3" cy="123.2" r="4.7" />
+          <line x1="965.3" y1="139.3" x2="965.3" y2="126.6" stroke-width="1.2" />
+          <circle cx="965.7" cy="120.1" r="4.9" />
+          <circle cx="961.5" cy="123.4" r="4.1" />
+          <circle cx="968.9" cy="123.2" r="4.1" />
+          <line x1="984.3" y1="137.4" x2="984.3" y2="122.2" stroke-width="1.3" />
+          <circle cx="984.1" cy="115.4" r="5.5" />
+          <circle cx="979.6" cy="118.5" r="4.1" />
+          <circle cx="988.1" cy="119.2" r="4.5" />
+          <line x1="1264.2" y1="100.2" x2="1264.2" y2="88.5" stroke-width="1.2" />
+          <circle cx="1264.3" cy="82" r="4.5" />
+          <circle cx="1260.5" cy="85.6" r="3.7" />
+          <circle cx="1267.8" cy="84.7" r="4.5" />
+          <circle cx="1262" cy="78.3" r="3" />
+          <line x1="1278.6" y1="99.8" x2="1278.6" y2="88.7" stroke-width="1.2" />
+          <circle cx="1278.6" cy="82.5" r="4.9" />
+          <circle cx="1275" cy="85.3" r="3.5" />
+          <circle cx="1283.1" cy="85.6" r="4" />
+          <circle cx="1275.8" cy="80.3" r="3" />
         </g>
       </svg>
     </div>
@@ -212,18 +302,18 @@ const FOOTER_HTML = `
         <div class="footer-brand">
           <img src="images/branding/white-logo.png" alt="Local Hazards Network" class="footer-logo" />
           <p>
-            An ENGN4300 Capstone Design Project at the Australian National University,
-            School of Engineering / College of Systems and Society. Part of the
-            NEMA Disaster Ready Fund initiative, funded until March 2028.
+            A 2026 ENGN4300 Capstone Design Project at the Australian National University,
+            School of Engineering. Part of the NEMA Disaster Ready Fund initiative,
+            with our work handed over to future teams.
           </p>
           <div class="hazard-simulator">
-            <span class="simulator-label">Simulate Environmental Hazard</span>
+            <span class="simulator-label">Simulate Environmental Hazard:</span>
             <div class="simulator-buttons">
-              <button class="sim-btn active" data-hazard="normal" title="Normal weather conditions">No Hazards</button>
+              <button class="sim-btn active" data-hazard="normal" title="Normal weather conditions"><i class="fa-solid fa-sun" aria-hidden="true"></i> Clear</button>
               <button class="sim-btn" data-hazard="storm"
-                title="Simulate high rainfall, storms, and floods">Storm</button>
+                title="Simulate high rainfall, storms, and floods"><i class="fa-solid fa-cloud-showers-heavy" aria-hidden="true"></i> Storm</button>
               <button class="sim-btn" data-hazard="bushfire"
-                title="Simulate extreme heat and bushfire risk">Bushfire</button>
+                title="Simulate extreme heat and bushfire risk"><i class="fa-solid fa-fire" aria-hidden="true"></i> Bushfire</button>
             </div>
           </div>
         </div>
@@ -231,10 +321,8 @@ const FOOTER_HTML = `
         <div class="footer-col">
           <h4>Sections</h4>
           <ul>
-            <li><a href="index.html#about">About the Project</a></li>
-            <li><a href="index.html#workstreams">Workstreams</a></li>
-            <li><a href="index.html#team">Team</a></li>
-            <li><a href="index.html#deliverables">Deliverables</a></li>
+            ${NAV_LINKS.map(([href, label]) => `<li><a href="${href}">${label}</a></li>`).join('')}
+            <li><a href="index.html#log">Project Log</a></li>
           </ul>
         </div>
 
@@ -242,23 +330,21 @@ const FOOTER_HTML = `
           <h4>Documents</h4>
           <ul>
             <li><a
-                href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Audits/Audit%202/Concept%20of%20Operations.docx?d=w51f9f8e7baa64e678b7b202a949ac278&csf=1&web=1&e=UumYg4"
+                href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Audits/Audit%203/Concept%20of%20Operations.docx?d=w435b33f3d20447d0b489eeda4df4c07a&csf=1&web=1&e=invOeD"
                 target="_blank" rel="noopener">Concept of Operations</a></li>
             <li><a
                 href="https://anu365.sharepoint.com/:f:/r/sites/LoRaCapstone/Shared%20Documents/Repository?csf=1&web=1&e=XXRxaj"
                 target="_blank" rel="noopener">Project Repository</a></li>
+            <li><a href="showcase.html">Video Showcase</a></li>
           </ul>
         </div>
 
       </div>
 
       <div class="footer-bottom">
-        <span>
-          &copy; 2026 Local Hazards Network Capstone Team
-        </span>
-        <span>
-          Grady Emerson &middot; Ken Doan &middot; Ruby Fusca &middot;
-          Kyle Greenwood &middot; Kai Pietschner &middot; Justin Wilson
+        <span>&copy; 2026 Local Hazards Network &middot; Australian National University</span>
+        <span class="footer-names">
+          Ken Doan<span class="sep">&bull;</span>Grady Emerson<span class="sep">&bull;</span>Ruby Fusca<span class="sep">&bull;</span>Kyle Greenwood<span class="sep">&bull;</span>Kai Pietschner<span class="sep">&bull;</span>Justin Wilson
         </span>
       </div>
     </div>
@@ -269,6 +355,19 @@ class SiteHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = HEADER_HTML;
     localiseLinks(this);
+    this.initMobileMenu();
+  }
+
+  // Collapsible nav on narrow screens
+  initMobileMenu() {
+    const navbar = this.querySelector('.navbar');
+    const toggle = this.querySelector('.navbar-toggle');
+    const setOpen = open => {
+      navbar.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    toggle.addEventListener('click', () => setOpen(!navbar.classList.contains('is-open')));
+    this.querySelectorAll('.navbar-nav a').forEach(a => a.addEventListener('click', () => setOpen(false)));
   }
 }
 
@@ -277,6 +376,42 @@ class SiteFooter extends HTMLElement {
     this.innerHTML = FOOTER_HTML;
     localiseLinks(this);
     this.initHazardSimulator();
+    this.initHillParallax();
+  }
+
+  // Distant hills lag behind the scroll, settling into place at the bottom of the page
+  initHillParallax() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const landscape = this.querySelector('.footer-landscape-wrap');
+    const layers = [
+      { els: this.querySelectorAll('.hill-back'), depth: 19 },
+      { els: this.querySelectorAll('.hill-mid, .mid-trees'), depth: 10 },
+    ];
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+      const vh = window.innerHeight;
+      const start = landscape.getBoundingClientRect().top + window.scrollY - vh;
+      const end = document.documentElement.scrollHeight - vh;
+      const progress = end > start ? Math.min(Math.max((window.scrollY - start) / (end - start), 0), 1) : 1;
+      layers.forEach(({ els, depth }) => {
+        const offset = -(1 - progress) * depth;
+        els.forEach(el => { el.style.transform = `translateY(${offset.toFixed(2)}px)`; });
+      });
+    };
+
+    const requestUpdate = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('resize', requestUpdate);
+    update();
   }
 
   // Hazard landscape weather simulator

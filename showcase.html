@@ -10,8 +10,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@500;600;700;800&display=swap"
     rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css" />
   <script src="js/layout.js"></script>
   <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
@@ -23,47 +25,20 @@
     /* =============================================
        SHOWCASE PAGE
        ============================================= */
-    .showcase {
-      position: relative;
-      overflow: hidden;
-    }
-
     .showcase-inner {
-      position: relative;
-      z-index: 1;
-      max-width: 880px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 56px 24px 72px;
+      padding: 0 24px 72px;
     }
 
-    .showcase h1 {
-      font-size: clamp(1.9rem, 5vw, 2.8rem);
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 14px;
-    }
-
-    .showcase h1 span {
-      color: var(--gold);
-    }
-
-    .showcase-desc {
-      font-size: 1rem;
-      color: var(--on-dark-muted);
-      max-width: 620px;
-      line-height: 1.65;
-      margin-bottom: 28px;
-    }
-
-    /* Responsive 16:9 video frame */
     .video-frame {
       position: relative;
       width: 100%;
       aspect-ratio: 16 / 9;
       border-radius: var(--radius);
       overflow: hidden;
-      background: var(--navy-deep);
-      border: 1px solid var(--border-dark);
+      background: var(--navy);
+      border: 6px solid var(--white);
       box-shadow: var(--shadow-lg);
     }
 
@@ -77,33 +52,25 @@
 
     .video-meta {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
+      justify-content: flex-end;
       margin-top: 12px;
-      font-size: 0.82rem;
-      color: var(--on-dark-faint);
+      font-size: 0.88rem;
+      font-weight: 600;
     }
 
     .video-meta a {
-      color: var(--on-dark-muted);
       display: inline-flex;
       align-items: center;
       gap: 6px;
     }
 
-    .video-meta a:hover {
-      color: #FFFFFF;
-    }
 
-    /* Landing page call to action */
     .showcase-cta {
       margin-top: 36px;
-      padding: 24px;
+      padding: 28px;
       border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-dark);
+      background: var(--white);
+      border: 3px solid var(--navy);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -112,25 +79,18 @@
     }
 
     .showcase-cta h2 {
-      font-size: 1.1rem;
-      font-weight: 700;
+      font-size: 1.3rem;
+      font-weight: 800;
       margin-bottom: 4px;
     }
 
     .showcase-cta p {
-      font-size: 0.9rem;
-      color: var(--on-dark-muted);
-      line-height: 1.55;
-    }
-
-    .showcase-cta .btn {
-      font-size: 1rem;
-      padding: 14px 28px;
+      color: var(--text-muted);
     }
 
     @media (max-width: 600px) {
       .showcase-inner {
-        padding: 32px 16px 48px;
+        padding: 0 16px 48px;
       }
 
       .showcase-cta {
@@ -149,14 +109,25 @@
 
   <site-header></site-header>
 
-  <main class="showcase">
-    <div class="showcase-inner">
-
-      <h1>Local <span>Hazards Network</span></h1>
-      <p class="showcase-desc">
-        Low-power LoRa sensor node for multi-hazard monitoring
-        in rural New South Wales. Watch our pitch, then explore the project.
+  <header class="hero hero--compact">
+    <div class="container">
+      <h1 class="hero-title">Local Hazards <span class="nowrap">Network<span class="dot"></span></span></h1>
+      <p class="hero-tagline">Filling environmental data gaps for better remote disaster response in NSW</p>
+      <p class="hero-desc">
+        For our 2026 ANU capstone project, we built a low-cost, solar-powered sensor node that shares environmental data over
+        long-range radio and MeshCore.
       </p>
+    </div>
+  </header>
+
+  <div class="wave wave--navy-pale" aria-hidden="true">
+    <svg viewBox="0 0 1440 84" preserveAspectRatio="none">
+      <path d="M0,46 C240,62 520,64 760,52 C1000,40 1240,38 1440,48 L1440,84 L0,84 Z" />
+    </svg>
+  </div>
+
+  <main class="section--pale">
+    <div class="showcase-inner">
 
       <!-- Replace VIDEO_ID (in both places below) with the YouTube video ID,
            e.g. https://youtu.be/dQw4w9WgXcQ -> dQw4w9WgXcQ -->
@@ -168,27 +139,17 @@
       </div>
       <div class="video-meta">
         <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" rel="noopener">
-          Watch on YouTube
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M7 17L17 7" />
-            <path d="M8 7h9v9" />
-          </svg>
+          Watch on YouTube <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
         </a>
       </div>
 
       <div class="showcase-cta">
         <div>
           <h2>Want the full story?</h2>
-          <p>Visit our website to learn more about how this project came to be!</p>
+          <p>See the problem we tackled, how the node works, and how the project came together.</p>
         </div>
-        <a href="index.html" class="btn btn-primary">
-          Explore the Project
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M5 12h14" />
-            <path d="M13 6l6 6-6 6" />
-          </svg>
+        <a href="index.html" class="btn btn-navy">
+          Explore the Project <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
         </a>
       </div>
 

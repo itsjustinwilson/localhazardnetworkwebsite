@@ -6,12 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Local Hazards Network</title>
   <meta name="description"
-    content="ENGN4300 Capstone project assessing the feasibility of multi-hazard monitoring in rural NSW using LoRa/MeshCore sensor networks." />
+    content="Local Hazards Network: a 2026 ANU capstone project that built a low-cost, solar-powered sensor node to fill environmental data gaps for disaster response in rural NSW." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@500;600;700;800&display=swap"
     rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css" onload="document.documentElement.style.visibility=''" />
   <script src="js/layout.js"></script>
   <noscript>
@@ -30,24 +32,15 @@
 <body>
 
   <!-- ============================================================
-       AUDIT BANNER (DISMISSIBLE)
+       AUDIT BANNER
        ============================================================ -->
   <div class="audit-banner" id="audit-banner">
     <div class="container audit-banner-container">
-      <div class="audit-banner-content">
-        <span class="audit-banner-text">
-          Shadow Teams and Tutors: to help you review our project for Audit 4, please refer to <a
-            href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Audit%204%20Guide%20-%20Shadow%20and%20Tutor.docx?d=w0ef33e4311c54213806fc5d53752a525&csf=1&web=1&e=b2tnfO"
-            target="_blank" rel="noopener" class="audit-banner-link">this guide</a>.
-        </span>
-      </div>
-      <!-- <button class="audit-banner-close" id="audit-banner-close" aria-label="Dismiss banner">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-          stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button> -->
+      <span class="audit-banner-text">
+        Shadow Teams and Tutors: to help you review our project for Audit 4, please refer to <a
+          href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Audit%204%20Guide%20-%20Shadow%20and%20Tutor.docx?d=w0ef33e4311c54213806fc5d53752a525&csf=1&web=1&e=b2tnfO"
+          target="_blank" rel="noopener" class="audit-banner-link">this guide</a>.
+      </span>
     </div>
   </div>
 
@@ -64,596 +57,607 @@
     })();
   </script>
 
-  <!-- ============================================================================
-       TOP BAR
-       ============================================================ -->
-  <!-- <div class="topbar">
-    <div class="container">
-      <span>ENGN4300 Capstone Design Project &mdash; School of Engineering, ANU</span>
-      <span>2026</span>
-    </div>
-  </div> -->
-
   <site-header></site-header>
 
   <!-- ============================================================
        HERO
        ============================================================ -->
-  <section class="hero">
+  <header class="hero">
     <div class="container">
       <div class="hero-layout">
         <div class="hero-content">
-          <!-- <div class="hero-eyebrow"> -->
-          <!-- <span class="badge">ANU Capstone Project</span> -->
-          <!-- <span class="badge">The Australian National University</span> -->
-          <!-- </div> -->
-
-          <h1>
-            Local<br />
-            <span>Hazards Network</span>
-          </h1>
-
+          <h1 class="hero-title">Local Hazards <span class="nowrap">Network<span class="dot"></span></span></h1>
+          <p class="hero-tagline">Filling environmental data gaps for better remote disaster response in NSW</p>
           <p class="hero-desc">
-            A 2026 ANU Capstone Project assessing the feasibility of multi-hazard monitoring in rural New South Wales
-            using low-power LoRa sensor nodes and the MeshCore communication protocol.
-            Building disaster resilience for at-risk communities.
+            Over the 2026 academic year, our team designed, built and tested a low-cost, modular sensor node that
+            collects local environmental data in rural New South Wales and shares it over long-range radio,
+            without relying on mains power or mobile coverage.
           </p>
-
           <div class="hero-actions">
-            <a href="#about" class="btn btn-primary">Explore the Project</a>
-            <div class="hero-actions-row">
-              <a href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Audits/Audit%202/Concept%20of%20Operations.docx?d=w51f9f8e7baa64e678b7b202a949ac278&csf=1&web=1&e=UumYg4"
-                target="_blank" rel="noopener" class="btn btn-outline">📄 Concept of Operations</a>
-              <a href="https://anu365.sharepoint.com/:f:/r/sites/LoRaCapstone/Shared%20Documents/Repository?csf=1&web=1&e=XXRxaj"
-                target="_blank" rel="noopener" class="btn btn-outline">💾 Project Repository</a>
-            </div>
-            <p style="color: var(--on-dark-muted); font-size: small;">Please note: to access the documents on this
-              website, you may need to request access by <a href="#team" style="color: var(--teal);">contacting the
-                project team.</a></p>
+            <a href="showcase.html" class="btn btn-primary"><i class="fa-solid fa-play" aria-hidden="true"></i> Watch
+              the Video</a>
+            <a href="#about" class="btn btn-outline">Explore the Project</a>
+          </div>
+          <p class="hero-note">Some linked documents are hosted on SharePoint. If you can't open them,
+            <a href="#team">contact the team</a> to request access.
+          </p>
+        </div>
+
+        <div class="hero-photo">
+          <div class="photo-frame">
+            <img src="images/prototyping/firmware-soldering.jpg"
+              alt="Two team members soldering components for the sensor node" />
+          </div>
+          <div class="photo-caption">Kyle and Ken soldering the prototype's sensor hardware</div>
+        </div>
+      </div>
+
+      <!-- <div class="facts">
+        <div class="fact">
+          <span class="icon-badge icon-badge--sm"><i class="fa-solid fa-triangle-exclamation"
+              aria-hidden="true"></i></span>
+          <div>
+            <div class="fact-value">6 hazards</div>
+            <div class="fact-label">detectable from sensor data</div>
           </div>
         </div>
-
-        <div class="hero-image-wrap">
-          <img src="images/sensors/spring-valley-farm-sensor.jpg"
-            alt="Existing LoRa monitoring station deployed at Spring Valley Farm, rural NSW" />
-          <div class="hero-image-caption">Existing LoRa node deployment in rural NSW</div>
+        <div class="fact">
+          <span class="icon-badge icon-badge--sm"><i class="fa-solid fa-tower-broadcast" aria-hidden="true"></i></span>
+          <div>
+            <div class="fact-value">Long-range</div>
+            <div class="fact-label">LoRa radio over MeshCore</div>
+          </div>
+        </div>
+        <div class="fact">
+          <span class="icon-badge icon-badge--sm"><i class="fa-solid fa-solar-panel" aria-hidden="true"></i></span>
+          <div>
+            <div class="fact-value">Solar</div>
+            <div class="fact-label">powered, off the grid</div>
+          </div>
+        </div>
+        <div class="fact">
+          <span class="icon-badge icon-badge--sm"><i class="fa-solid fa-battery-full" aria-hidden="true"></i></span>
+          <div>
+            <div class="fact-value">10 days</div>
+            <div class="fact-label">of battery storage</div>
+          </div>
         </div>
       </div>
+    </div> -->
+  </header>
 
-      <!-- <div class="hero-stats">
-        <div>
-          <div class="hero-stat-value">6</div>
-          <div class="hero-stat-label">Team Members</div>
-        </div>
-        <div>
-          <div class="hero-stat-value">5+</div>
-          <div class="hero-stat-label">Hazard Types</div>
-        </div>
-        <div>
-          <div class="hero-stat-value">4</div>
-          <div class="hero-stat-label">Focus Regions</div>
-        </div>
-        <div>
-          <div class="hero-stat-value">3</div>
-          <div class="hero-stat-label">Workstreams</div>
-        </div>
- -->
-    </div>
-    </div><!-- /.container -->
-  </section>
+  <div class="wave wave--navy-white" aria-hidden="true">
+    <svg viewBox="0 0 1440 84" preserveAspectRatio="none">
+      <path d="M0,46 C240,62 520,64 760,52 C1000,40 1240,38 1440,48 L1440,84 L0,84 Z" />
+    </svg>
+  </div>
 
   <!-- ============================================================
-       PROJECT UPDATES
+       ABOUT: PROBLEM & SOLUTION
        ============================================================ -->
-  <section class="section section--alt updates-section" id="updates">
+  <section class="section" id="about">
     <div class="container">
-      <div class="updates-header">
-        <div>
-          <!-- <span class="section-label">Project Updates</span> -->
-          <h2 class="section-title" style="margin-bottom:0;">Latest from the Team</h2>
+      <div class="ps-grid">
+        <div class="ps-block">
+          <h2 class="section-title">The Problem</h2>
+          <p>
+            Large parts of rural NSW sit outside the reach of dense weather monitoring and dependable mobile
+            coverage. Without local, real-time environmental information, emergency services and communities have less to go on
+            when deciding when to warn, evacuate or respond.
+          </p>
+          <p>
+            Those gaps get worse during the events that matter most. Severe weather brings down mains power,
+            damages transmission lines, and overwhelms existing communication networks, as communities saw during
+            the 2019-20 Black Summer bushfires and the 2021-22 Lismore floods.
+          </p>
         </div>
-        <!-- <div class="updates-live-badge">
-          <span class="updates-live-dot"></span>
-          Continuously Updated
-        </div> -->
+
+        <div class="ps-block" id="solution">
+          <h2 class="section-title">The Solution</h2>
+          <p>
+            We developed a low-cost, modular sensor node assembled from off-the-shelf components.
+            Each node measures conditions where it stands and transmits its readings over long-range radio, so
+            experts can analyse the data and use it to support early warning systems.
+          </p>
+          <p>
+            Because it runs on solar power and communicates over the decentralised MeshCore protocol, the node is built
+            to keep reporting when other infrastructure fails. If many of them are deployed, they form a network with
+            planned redundancy: coverage gaps are filled, and if one link drops, data can find
+            another path.
+          </p>
+          <p>
+            The project built on an earlier ANU capstone project that monitored flooding over a Meshtastic network. We moved
+            to MeshCore and widened the scope from floods to multiple hazards. It sits within the NEMA-funded
+            Disaster Ready Fund initiative, which runs until March 2028.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave wave--white-pale" aria-hidden="true">
+    <svg viewBox="0 0 1440 84" preserveAspectRatio="none">
+      <path d="M0,46 C240,62 520,64 760,52 C1000,40 1240,38 1440,48 L1440,84 L0,84 Z" />
+    </svg>
+  </div>
+
+  <!-- ============================================================
+       DETECTABLE HAZARDS
+       ============================================================ -->
+  <section class="section section--pale" id="hazards">
+    <div class="container">
+      <div class="hazards-layout">
+        <div class="hazards-photo">
+          <div class="photo-frame">
+            <img src="images/sensors/sensor.jpg"
+              alt="A LoRa sensor node mounted on a fence post in a rural NSW paddock" />
+          </div>
+          <div class="photo-caption">A node from the earlier flood-monitoring project, deployed in rural NSW</div>
+        </div>
+
+        <div>
+          <h2 class="section-title">Detectable Hazards</h2>
+          <p class="section-desc" style="margin-bottom:28px;">
+            The node's sensor readings can signal the early onset of six natural hazards common in rural NSW:
+          </p>
+
+          <div class="hazards-grid">
+            <div class="hazard-item">
+              <span class="icon-badge icon-badge--sm"><i class="fa-solid fa-house-flood-water"
+                  aria-hidden="true"></i></span>
+              <div>
+                <h3>Floods</h3>
+                <p>Sustained heavy rainfall is an early sign that water levels may rise.</p>
+              </div>
+            </div>
+            <div class="hazard-item">
+              <span class="icon-badge icon-badge--sm"><i class="fa-solid fa-cloud-showers-heavy"
+                  aria-hidden="true"></i></span>
+              <div>
+                <h3>Storms</h3>
+                <p>Falling air pressure, heavy rain and gusts point to severe storms building.</p>
+              </div>
+            </div>
+            <div class="hazard-item">
+              <span class="icon-badge icon-badge--sm"><i class="fa-solid fa-fire" aria-hidden="true"></i></span>
+              <div>
+                <h3>Bushfires</h3>
+                <p>Smoke gases, high temperatures, and low humidity flag dangerous fire conditions.</p>
+              </div>
+            </div>
+            <div class="hazard-item">
+              <span class="icon-badge icon-badge--sm"><i class="fa-solid fa-wind" aria-hidden="true"></i></span>
+              <div>
+                <h3>Wind Storms</h3>
+                <p>An anemometer tracks wind speed and gusts as they pick up.</p>
+              </div>
+            </div>
+            <div class="hazard-item">
+              <span class="icon-badge icon-badge--sm"><i class="fa-solid fa-hill-rockslide"
+                  aria-hidden="true"></i></span>
+              <div>
+                <h3>Landslides</h3>
+                <p>A below-ground soil moisture sensor shows when the ground become saturated.</p>
+              </div>
+            </div>
+            <div class="hazard-item">
+              <span class="icon-badge icon-badge--sm"><i class="fa-solid fa-sun-plant-wilt"
+                  aria-hidden="true"></i></span>
+              <div>
+                <h3>Droughts</h3>
+                <p>Soil moisture, rainfall and temperature recorded over weeks reveal drying trends.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave wave--pale-white" aria-hidden="true">
+    <svg viewBox="0 0 1440 84" preserveAspectRatio="none">
+      <path d="M0,46 C240,62 520,64 760,52 C1000,40 1240,38 1440,48 L1440,84 L0,84 Z" />
+    </svg>
+  </div>
+
+  <!-- ============================================================
+       HOW IT WORKS
+       ============================================================ -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-desc">
+        Packaged data travels node to node across a community network of MeshCore repeaters, with no mobile towers
+        or internet connection needed along the way.
+      </p>
+
+      <div class="network-diagram">
+        <svg viewBox="0 0 900 250" role="img"
+          aria-label="Diagram: a sensor node sends data across a mesh of community repeaters to a person using the MeshCore app on their phone">
+          <defs>
+            <g id="lhn-device">
+              <line x1="16" y1="-8" x2="16" y2="-40" stroke="#0D2B45" stroke-width="3" stroke-linecap="round" />
+              <circle cx="16" cy="-41" r="3" fill="#0D2B45" />
+              <rect x="-30" y="-9" width="60" height="18" rx="4" fill="#0D2B45" />
+              <rect x="-22" y="-2" width="10" height="4" rx="2" fill="#A5CFEE" />
+            </g>
+            <marker id="lhn-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6"
+              orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#FFC000" />
+            </marker>
+          </defs>
+
+          <!-- Mesh links between repeaters -->
+          <g class="mesh-links" stroke="#0D2B45" stroke-width="3" stroke-dasharray="8 8" opacity="0.55" fill="none">
+            <line x1="290" y1="175" x2="405" y2="60" />
+            <line x1="405" y1="60" x2="530" y2="170" />
+            <line x1="405" y1="60" x2="605" y2="100" />
+            <line x1="530" y1="170" x2="605" y2="100" />
+          </g>
+
+          <!-- Data path -->
+          <path class="data-path" d="M136 110 L270 175 M310 177 L510 172 M550 174 L745 143" stroke="#FFC000"
+            stroke-width="4" stroke-dasharray="10 9" fill="none" stroke-linecap="round" marker-end="url(#lhn-arrow)" />
+
+          <!-- Sensor node -->
+          <image href="images/sensor-node-diagram.png" x="18" y="12" width="172" height="284" />
+
+          <!-- Repeaters -->
+          <use href="#lhn-device" transform="translate(290 180)" />
+          <use href="#lhn-device" transform="translate(405 65)" />
+          <use href="#lhn-device" transform="translate(530 175)" />
+          <use href="#lhn-device" transform="translate(605 105)" />
+
+          <!-- Person with phone -->
+          <image href="images/phone-illustration.png" x="705" y="55" width="190" height="121" transform="translate(1600 0) scale(-1 1)" />
+
+          <g font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#0D2B45" text-anchor="middle"
+            stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round" paint-order="stroke">
+            <text x="100" y="232">Sensor node</text>
+            <text x="450" y="232">Community repeaters</text>
+            <text x="800" y="232">MeshCore app</text>
+          </g>
+        </svg>
       </div>
 
-      <!-- Latest update -->
+      
+      <h3 class="features-title">Network &amp; Power</h3>
+      <div class="features">
+        <div class="feature">
+          <i class="fa-solid fa-tower-broadcast" aria-hidden="true"></i>
+          <h4>Long-Range Radio</h4>
+          <p>LoRa radio carries data over long distances using very little power.</p>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-circle-nodes" aria-hidden="true"></i>
+          <h4>Decentralised MeshCore</h4>
+          <p>No reliance on a central servers or towers. Every repeater helps distribute data.</p>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-solar-panel" aria-hidden="true"></i>
+          <h4>Solar Powered</h4>
+          <p>An on-board solar panel keeps the node running without mains power.</p>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-battery-full" aria-hidden="true"></i>
+          <h4>10-Day Battery</h4>
+          <p>Theoretically enough stored energy to keep reporting through extended stretches of bad weather.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave wave--white-navy" aria-hidden="true">
+    <svg viewBox="0 0 1440 84" preserveAspectRatio="none">
+      <path d="M0,46 C240,62 520,64 760,52 C1000,40 1240,38 1440,48 L1440,84 L0,84 Z" />
+    </svg>
+  </div>
+
+  <!-- ============================================================
+       PROJECT JOURNEY
+       ============================================================ -->
+  <section class="section section--dark" id="journey">
+    <div class="container">
+      <h2 class="section-title">Project Journey</h2>
+      <p class="section-desc">
+        Our project ran across two phases: a research phase to make the key design decisions, followed by a
+        build phase that turned those decisions into a working, tested prototype.
+      </p>
+
+      <div class="phase">
+        <div class="phase-head">
+          <h3>Phase 1: Research &amp; Design Decisions</h3>
+        </div>
+        <p class="phase-desc">Three parallel workstreams each tackled one technical question and reported back with a
+          recommendation.</p>
+
+        <div class="ws-grid">
+          <div class="ws-card">
+            <span class="icon-badge icon-badge--sm"><i class="fa-solid fa-tower-broadcast"
+                aria-hidden="true"></i></span>
+            <h4>Communication Network Workstream</h4>
+            <p>Evaluated MeshCore as the primary network for emergency data in rural areas.</p>
+            <ul class="ws-list">
+              <li>Small-scale MeshCore field testing</li>
+              <li>Range and reliability evaluation</li>
+              <li>Rust vs. C for embedded development</li>
+              <li>ACMA compliance</li>
+            </ul>
+            <a href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Workstreams/Network/Network%20Workstream%20Report.docx?d=w121a6819310b4d7c88bce63a03cd1ede&csf=1&web=1&e=pTTzkt"
+              class="ws-link" target="_blank" rel="noopener">Read the report <i
+                class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </div>
+
+          <div class="ws-card">
+            <span class="icon-badge icon-badge--sm"><i class="fa-solid fa-temperature-half"
+                aria-hidden="true"></i></span>
+            <h4>Sensors &amp; Hazards Workstream</h4>
+            <p>Researched the hazards facing rural NSW and selected off-the-shelf sensors to detect them.</p>
+            <ul class="ws-list">
+              <li>Flood, bushfire, landslide, storm and drought research</li>
+              <li>Rainfall, humidity, temperature and wind sensor assessment</li>
+              <li>Component options assessment</li>
+            </ul>
+            <a href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Workstreams/Sensors/Sensors%20Workstream%20Report.docx?d=w22f95f7639d1485a9288ef0db2ee2e36&csf=1&web=1&e=c1RvA1"
+              class="ws-link" target="_blank" rel="noopener">Read the report <i
+                class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </div>
+
+          <div class="ws-card">
+            <span class="icon-badge icon-badge--sm"><i class="fa-solid fa-solar-panel" aria-hidden="true"></i></span>
+            <h4>Power &amp; Enclosure Workstream</h4>
+            <p>Sized the power system and designed the design of the sensor node.</p>
+            <ul class="ws-list">
+              <li>Battery and solar panel sizing</li>
+              <li>Charging and battery life optimisation</li>
+              <li>Weatherproofing and enclosure design</li>
+            </ul>
+            <a href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Workstreams/Power%20and%20Enclosure/Power%20%26%20Enclosure%20Workstream%20Report.docx?d=wcfb419bdc56e4f87bb83c0fd8bece541&csf=1&web=1&e=0gGwGI"
+              class="ws-link" target="_blank" rel="noopener">Read the report <i
+                class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-head">
+          <h3>Phase 2: Prototyping &amp; Testing</h3>
+        </div>
+        <p class="phase-desc">The team split in two to bring the Phase 1 recommendations together into a single
+          prototype node.</p>
+
+        <div class="ws-grid ws-grid--2">
+          <div class="ws-card">
+            <span class="icon-badge icon-badge--sm"><i class="fa-solid fa-microchip" aria-hidden="true"></i></span>
+            <h4>Firmware Workstream</h4>
+            <p>Wrote the embedded software that reads the sensors, manages power and sends data over MeshCore.</p>
+            <ul class="ws-list">
+              <li>Sensor drivers and data handling</li>
+              <li>Low-power sleep states</li>
+              <li>MeshCore integration</li>
+            </ul>
+            <a href="https://anu365.sharepoint.com/:f:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Prototyping%20%26%20Testing/Firmware?d=w3c4c0ffb26e343fc9ced6c7ab52d782a&csf=1&web=1&e=ly2xQt"
+              class="ws-link" target="_blank" rel="noopener">Open the team folder <i
+                class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </div>
+
+          <div class="ws-card">
+            <span class="icon-badge icon-badge--sm"><i class="fa-solid fa-screwdriver-wrench"
+                aria-hidden="true"></i></span>
+            <h4>Prototyping Workstream</h4>
+            <p>Assembled the sensors, power system and enclosure into a complete node and put it through testing.</p>
+            <ul class="ws-list">
+              <li>CAD design of the full node</li>
+              <li>Hardware assembly and integration</li>
+              <li>Enclosure and mounting assembly</li>
+            </ul>
+            <a href="https://anu365.sharepoint.com/:f:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Prototyping%20%26%20Testing/Prototyping?d=w3ec6bcb610ed41ff9f75e0dd661d0cba&csf=1&web=1&e=VHa8aM"
+              class="ws-link" target="_blank" rel="noopener">Open the team folder <i
+                class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase" style="margin-bottom:0;">
+        <div class="phase-head">
+          <h3>In the Field</h3>
+        </div>
+        <p class="phase-desc">From range testing on Mt Ainslie to time spent with the RFS Communications Team.</p>
+
+        <div class="gallery">
+          <figure>
+            <img src="images/field-tests/antennae-testing.jpg" alt="Antenna testing during MeshCore field evaluation"
+              loading="lazy" />
+            <figcaption>Antenna testing for the MeshCore network</figcaption>
+          </figure>
+          <figure>
+            <img src="images/field-tests/equipment.jpg" alt="Hardware and equipment prepared for field deployment"
+              loading="lazy" />
+            <figcaption>Equipment ready for a field test</figcaption>
+          </figure>
+          <figure>
+            <img src="images/field-tests/mt-ainslie-view.jpg" alt="View from Mt Ainslie toward the Hume field test site"
+              loading="lazy" />
+            <figcaption>Network testing from Mt Ainslie toward Hume</figcaption>
+          </figure>
+          <figure>
+            <img src="images/field-tests/rfs-comms-vehicle.jpg"
+              alt="Team members in front of a NSW Rural Fire Service command vehicle" loading="lazy" />
+            <figcaption>Visiting the RFS Communications Team</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave wave--navy-pale" aria-hidden="true">
+    <svg viewBox="0 0 1440 84" preserveAspectRatio="none">
+      <path d="M0,46 C240,62 520,64 760,52 C1000,40 1240,38 1440,48 L1440,84 L0,84 Z" />
+    </svg>
+  </div>
+
+  <!-- ============================================================
+       PROJECT LOG (rendered from updates.json)
+       ============================================================ -->
+  <section class="section section--pale" id="log">
+    <div class="container">
+      <h2 class="section-title">Project Log</h2>
+
       <div id="latest-update-container"></div>
 
-      <!-- Previous updates archive -->
       <details class="updates-archive">
         <summary>
-          <i class="updates-archive-chevron">&#9654;</i>
-          Previous Updates
+          <i class="fa-solid fa-chevron-right updates-archive-chevron" aria-hidden="true"></i>
+          Earlier entries
         </summary>
         <div class="updates-archive-list" id="archived-updates-container"></div>
       </details>
     </div>
   </section>
 
-  <!-- ============================================================
-       ABOUT
-       ============================================================ -->
-  <section class="section" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-text">
-          <!-- <span class="section-label">About the Project</span> -->
-          <h2 class="section-title">Disaster Resilience for Rural NSW Communities</h2>
-          <p>
-            Rural communities in NSW often lack localised environmental data and experience
-            poor data coverage, problems that are severely compounded during hazardous
-            weather events. This limits the ability of emergency services and communities
-            to access the information they need for disaster preparedness and response.
-          </p>
-          <p>
-            This project extends the previous ANU capstone project, a community disaster resilience initiative
-            (a flood monitoring system built on a Meshtastic network), by investigating
-            an alternative LoRa-based protocol <strong>MeshCore</strong>, and
-            broadening monitoring to cover multiple hazard types including bushfires,
-            landslides, severe storms, and drought. The final expected output is a prototype
-            hazard detection sensor.
-          </p>
-          <p>
-            The project is part of the <strong>Disaster Ready Fund (DRF)</strong> initiative,
-            funded by the National Emergency Management Agency (NEMA) and running until
-            March 2028. All work produced is designed to be handed forward to future teams.
-          </p>
-        </div>
-
-        <div class="about-highlights">
-          <div class="about-field-photo">
-            <img src="images/sensors/sensor.jpg"
-              alt="LoRa sensor node mounted on a fence post in a rural NSW paddock" />
-            <div class="about-field-caption">Existing sensor node deployed in the field, rural NSW</div>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-icon">📡</div>
-            <div class="highlight-body">
-              <h4>MeshCore Communication</h4>
-              <p>Investigating MeshCore as a resilient LoRa-based primary communication
-                network that operates reliably during extreme weather events.</p>
-            </div>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-icon">🌡️</div>
-            <div class="highlight-body">
-              <h4>Multi-Hazard Sensing</h4>
-              <p>Feasibility study and prototype development for environmental sensors
-                detecting flooding, bushfire, landslide, storm, and drought indicators.</p>
-            </div>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-icon">⚡️</div>
-            <div class="highlight-body">
-              <h4>Low-Power Deployment</h4>
-              <p>Solar-powered, COTS-based sensor nodes designed to be low-cost,
-                scalable, and robust enough for remote rural conditions.</p>
-            </div>
-          </div>
-          <!-- <div class="highlight-card">
-            <div class="highlight-icon">👥</div>
-            <div class="highlight-body">
-              <h4>Community-Centred Design</h4>
-              <p>Working with local landowners in mind to ensure
-                the system meets real community needs and constraints.</p>
-            </div>
-          </div> -->
-        </div>
-      </div>
-
-      <!-- Hazards -->
-      <div style="margin-top: 56px;">
-        <!-- <span class="section-label">Monitored Hazards</span> -->
-        <h3 class="section-title" style="font-size:1.4rem; margin-bottom:24px;">
-          Natural Hazards Under Investigation
-        </h3>
-        <div class="hazards-grid">
-          <div class="hazard-item">
-            <span class="hazard-emoji">🌧️</span>
-            <div>
-              <h4>Flooding</h4>
-              <p>Primary focus from previous project; stream height and rainfall monitoring.</p>
-            </div>
-          </div>
-          <div class="hazard-item">
-            <span class="hazard-emoji">🔥</span>
-            <div>
-              <h4>Bushfire</h4>
-              <p>Smoke and temperature sensors to detect early signs of fire activity.</p>
-            </div>
-          </div>
-          <div class="hazard-item">
-            <span class="hazard-emoji">⛰️</span>
-            <div>
-              <h4>Landslides</h4>
-              <p>Soil moisture and rainfall indicators relevant to slope instability.</p>
-            </div>
-          </div>
-          <div class="hazard-item">
-            <span class="hazard-emoji">⛈️</span>
-            <div>
-              <h4>Severe Storms</h4>
-              <p>Wind speed and hail indicators for severe weather detection.</p>
-            </div>
-          </div>
-          <div class="hazard-item">
-            <span class="hazard-emoji">☀️</span>
-            <div>
-              <h4>Drought</h4>
-              <p>Temperature, humidity, and rainfall deficit tracking over extended periods.</p>
-            </div>
-          </div>
-          <div class="hazard-item">
-            <span class="hazard-emoji">🔭</span>
-            <div>
-              <h4>General Monitoring</h4>
-              <p>Multi-parameter environmental sensing for comprehensive situational awareness.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       WORKSTREAMS
-       ============================================================ -->
-  <section class="section section--alt" id="workstreams">
-    <div class="container">
-      <!-- <span class="section-label">Project Structure</span> -->
-
-      <!-- Phase 1 Collapsible Block -->
-      <details class="phase-details">
-        <summary class="phase-summary">
-          <div class="phase-summary-content">
-            <h2 class="section-title">Phase 1: Design Decision Report Workstreams</h2>
-            <p class="section-desc">
-              The first phase of the project runs three parallel workstreams, each tackling a distinct
-              technical challenge. The second phase integrates their outputs into a unified, deployable prototype.
-            </p>
-          </div>
-          <div class="phase-chevron">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </div>
-        </summary>
-        <div class="phase-content">
-          <div class="workstreams-grid">
-            <!-- WS1 -->
-            <div class="ws-card">
-              <h3>Communication Network Workstream</h3>
-              <p>
-                Investigation and small-scale testing of MeshCore as the primary communication
-                network for emergency data transfer in rural areas.
-              </p>
-              <ul class="ws-list">
-                <li>Small-scale MeshCore network testing</li>
-                <li>Communication range &amp; reliability evaluation</li>
-                <li>Software considerations for embedded development (Rust vs. C)</li>
-                <li>Exploring the MQTT protocol for data transmission</li>
-                <li>Ensuring ACMA compliance</li>
-              </ul>
-              <a href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Workstreams/Network/Network%20Workstream%20Report.docx?d=w121a6819310b4d7c88bce63a03cd1ede&csf=1&web=1&e=pTTzkt"
-                class="btn ws-report-btn" target="_blank" rel="noopener">
-                📄 View Report
-              </a>
-            </div>
-
-            <!-- WS2 -->
-            <div class="ws-card">
-              <h3>Sensor and Hazard Assessment Workstream</h3>
-              <p>
-                Feasibility study and options assessment of consumer-off-the-shelf (COTS) components
-                to be used in the multi-hazard sensor nodes. Focuses on selecting appropriate
-                sensors for the range of hazards prevalent in rural NSW.
-              </p>
-              <ul class="ws-list">
-                <li>Research of environmental hazards (flooding, bushfire, landslide, storm, drought)</li>
-                <li>COTS sensor suitability assessment (rainfall, relative humidity, temperature, wind)</li>
-                <li>Component selection and options assessment report</li>
-              </ul>
-              <a href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Workstreams/Sensors/Sensors%20Workstream%20Report.docx?d=w22f95f7639d1485a9288ef0db2ee2e36&csf=1&web=1&e=c1RvA1"
-                class="btn ws-report-btn" target="_blank" rel="noopener">
-                📄 View Report
-              </a>
-            </div>
-
-            <!-- WS3 -->
-            <div class="ws-card">
-              <h3>Power &amp; Enclosure Workstream</h3>
-              <p>
-                Preliminary research of the physical harness for securing the sensor design to various
-                landscapes, alongside power supply and regulation design to ensure low power
-                consumption and long-lasting battery life in the field.
-              </p>
-              <ul class="ws-list">
-                <li>Battery, solar panel, and enclosure recommendations</li>
-                <li>Solar charging and battery life optimisation</li>
-                <li>Environmental durability and weatherproofing</li>
-                <li>Physical enclosure and mounting harness design</li>
-              </ul>
-              <a href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Workstreams/Power%20and%20Enclosure/Power%20%26%20Enclosure%20Workstream%20Report.docx?d=wcfb419bdc56e4f87bb83c0fd8bece541&csf=1&web=1&e=0gGwGI"
-                class="btn ws-report-btn" target="_blank" rel="noopener">
-                📄 View Report
-              </a>
-            </div>
-          </div>
-
-          <!-- Field Test Photo Gallery -->
-          <div class="field-photo-section">
-            <h3 class="field-photo-heading">Field Testing</h3>
-            <div class="field-photo-grid">
-              <div class="field-photo-item">
-                <img src="images/field-tests/antennae-testing.jpg"
-                  alt="Antenna testing during MeshCore network field evaluation" />
-                <div class="field-photo-caption">Antenna testing during MeshCore network field evaluation</div>
-              </div>
-              <div class="field-photo-item">
-                <img src="images/field-tests/equipment.jpg"
-                  alt="Hardware and equipment prepared for field deployment" />
-                <div class="field-photo-caption">Hardware and equipment prepared for field deployment</div>
-              </div>
-              <div class="field-photo-item">
-                <img src="images/field-tests/mt-ainslie-view.jpg"
-                  alt="View from Mt Ainslie toward the Hume field test site" />
-                <div class="field-photo-caption">View from Mt Ainslie toward the Hume field test site</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </details>
-
-      <!-- Phase 2 Collapsible Block -->
-      <details class="phase-details" open>
-        <summary class="phase-summary">
-          <div class="phase-summary-content">
-            <h2 class="section-title">Phase 2: Prototyping and Testing</h2>
-            <p class="section-desc">
-              Combining the outputs of Phase 1's three workstreams into a unified, deployable hazard detection
-              prototype.
-            </p>
-          </div>
-          <div class="phase-chevron">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </div>
-        </summary>
-        <div class="phase-content">
-          <div class="workstreams-grid phase-2-grid">
-            <!-- WS1 -->
-            <div class="ws-card">
-              <h3>Firmware Workstream</h3>
-              <p>
-                Development of embedded software to interface with sensors, manage power states, and handle
-                communication over the MeshCore network on the RAK platform.
-              </p>
-              <ul class="ws-list">
-                <li>Sensor driver integration and data handling</li>
-                <li>Power management and low-power sleep states</li>
-                <li>MeshCore network integration and payload handling</li>
-                <li>Local bench testing of firmware builds</li>
-              </ul>
-              <a href="https://anu365.sharepoint.com/:f:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Prototyping%20%26%20Testing/Firmware?d=w3c4c0ffb26e343fc9ced6c7ab52d782a&csf=1&web=1&e=ly2xQt"
-                class="btn ws-report-btn" target="_blank" rel="noopener">
-                📁 View Team Folder
-              </a>
-            </div>
-
-            <!-- WS2 -->
-            <div class="ws-card">
-              <h3>Prototyping Workstream</h3>
-              <p>
-                Physical assembly and integration of sensor, power, and enclosure subsystems into a working hazard
-                detection node, ready for field deployment.
-              </p>
-              <ul class="ws-list">
-                <li>Hardware assembly and subsystem integration</li>
-                <li>Enclosure and mounting harness assembly</li>
-                <li>Local and field testing of the assembled prototype</li>
-                <li>Iteration based on Test and Evaluation Plan results</li>
-              </ul>
-              <a href="https://anu365.sharepoint.com/:f:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Prototyping%20%26%20Testing/Prototyping?d=w3ec6bcb610ed41ff9f75e0dd661d0cba&csf=1&web=1&e=VHa8aM"
-                class="btn ws-report-btn" target="_blank" rel="noopener">
-                📁 View Team Folder
-              </a>
-            </div>
-          </div>
-        </div>
-      </details>
-    </div>
-  </section>
+  <div class="wave wave--pale-white" aria-hidden="true">
+    <svg viewBox="0 0 1440 84" preserveAspectRatio="none">
+      <path d="M0,46 C240,62 520,64 760,52 C1000,40 1240,38 1440,48 L1440,84 L0,84 Z" />
+    </svg>
+  </div>
 
   <!-- ============================================================
        TEAM
        ============================================================ -->
   <section class="section" id="team">
     <div class="container">
-      <!-- <span class="section-label">The People</span> -->
       <h2 class="section-title">Meet the Team</h2>
-      <!-- <p class="section-desc">
-        A six-person multidisciplinary capstone team from the ANU School of Engineering.
-      </p> -->
 
       <div class="team-grid">
-
         <div class="team-card">
-          <div class="team-avatar">GE</div>
-          <h3>Grady Emerson</h3>
-          <div class="team-role">Prototyping Team</div>
-          <p>Contributes electronics expertise to firmware development and serves as
-            the primary liaison with external stakeholders.</p>
-          <div class="team-email"><a href="mailto:u6892552@anu.edu.au">u6892552@anu.edu.au</a></div>
-        </div>
-
-        <div class="team-card">
-          <div class="team-avatar">KD</div>
           <h3>Ken Doan</h3>
           <div class="team-role">Firmware Team</div>
-          <p>Develops embedded firmware for the MeshCore sensor nodes, and the team's expert on microcontrollers and
-            Rust
-            programming.</p>
-          <div class="team-email"><a href="mailto:u6571006@anu.edu.au">u6571006@anu.edu.au</a></div>
+          <p>Developed the embedded firmware for the MeshCore sensor node, and was the team's go-to for
+            microcontrollers and Rust.</p>
+          <div class="team-email"><a href="mailto:u6571006@anu.edu.au"><i class="fa-solid fa-envelope"
+                aria-hidden="true"></i>u6571006@anu.edu.au</a></div>
         </div>
 
         <div class="team-card">
-          <div class="team-avatar">RF</div>
+          <h3>Grady Emerson</h3>
+          <div class="team-role">Prototyping Team</div>
+          <p>Brought electronics expertise to firmware development and was the team's main liaison with external
+            stakeholders.</p>
+          <div class="team-email"><a href="mailto:u6892552@anu.edu.au"><i class="fa-solid fa-envelope"
+                aria-hidden="true"></i>u6892552@anu.edu.au</a></div>
+        </div>
+
+        <div class="team-card">
           <h3>Ruby Fusca</h3>
           <div class="team-role">Prototyping Team</div>
-          <p>Assisting in the development of prototyping and testing, and leading the team's Safety in Design workshop.
-          </p>
-          <div class="team-email"><a href="mailto:u7656491@anu.edu.au">u7656491@anu.edu.au</a></div>
+          <p>Supported prototyping and testing, and led the team's Safety in Design workshop.</p>
+          <div class="team-email"><a href="mailto:u7656491@anu.edu.au"><i class="fa-solid fa-envelope"
+                aria-hidden="true"></i>u7656491@anu.edu.au</a></div>
         </div>
 
         <div class="team-card">
-          <div class="team-avatar">KG</div>
           <h3>Kyle Greenwood</h3>
           <div class="team-role">Firmware Team</div>
-          <p>Assisting in the development of firmware, and helping with the integration of all subsystems into a unified
-            deployable prototype.
-          </p>
-          <div class="team-email"><a href="mailto:u7472943@anu.edu.au">u7472943@anu.edu.au</a></div>
+          <p>Co-developed the firmware and helped integrate every subsystem into a single deployable prototype.</p>
+          <div class="team-email"><a href="mailto:u7472943@anu.edu.au"><i class="fa-solid fa-envelope"
+                aria-hidden="true"></i>u7472943@anu.edu.au</a></div>
         </div>
 
         <div class="team-card">
-          <div class="team-avatar">KP</div>
           <h3>Kai Pietschner</h3>
-          <div class="team-role">Prototyping Team
-          </div>
-          <p>Assisting in the development of prototypes, testing plans, and primary repository manager</p>
-          <div class="team-email"><a href="mailto:u7683663@anu.edu.au">u7683663@anu.edu.au</a></div>
+          <div class="team-role">Prototyping Team</div>
+          <p>Contributed to prototype development and test planning, and managed the project repository.</p>
+          <div class="team-email"><a href="mailto:u7683663@anu.edu.au"><i class="fa-solid fa-envelope"
+                aria-hidden="true"></i>u7683663@anu.edu.au</a></div>
         </div>
 
         <div class="team-card">
-          <div class="team-avatar">JW</div>
           <h3>Justin Wilson</h3>
           <div class="team-role">Prototyping Team</div>
-          <p>Assisting in the development of the prototypes and testing, and maintaining the project website.</p>
-          <div class="team-email"><a href="mailto:u7230220@anu.edu.au">u7230220@anu.edu.au</a></div>
+          <p>Contributed to prototype development and testing, and built and maintained this website.</p>
+          <div class="team-email"><a href="mailto:u7230220@anu.edu.au"><i class="fa-solid fa-envelope"
+                aria-hidden="true"></i>u7230220@anu.edu.au</a></div>
         </div>
-
       </div>
-
-      <!-- Project Hosts
-      <div style="margin-top: 16px;">
-        <h3 style="font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:16px;">
-          Project Hosts &amp; Supervisors
-        </h3>
-      </div>
-      <div class="team-hosts">
-        <div class="host-card">
-          <div class="host-avatar">JS</div>
-          <div>
-            <h3>Jere   Smith</h3>
-            <div class="host-title">Team Mentor &amp; Project Host</div>
-            <p>ANU researcher and host of the Local Hazard Network Project. Provides context,
-               project vision, constraints, and liaises with external stakeholders including
-               NEMA and SES on behalf of the team.</p>
-          </div>
-        </div>
-        <div class="host-card">
-          <div class="host-avatar">AP</div>
-          <div>
-            <h3>Asanka Peramune</h3>
-            <div class="host-title">Project Host &amp; Technical Expert</div>
-            <p>ANU researcher providing technical expertise on electronic nodes, network setup,
-               and testing. Key point of contact for MeshCore implementation and hardware
-               decisions.</p>
-          </div>
-        </div> -->
-    </div>
-
     </div>
   </section>
 
-  <!-- ============================================================
-       DELIVERABLES
-       ============================================================ -->
-  <section class="section section--alt" id="deliverables">
-    <div class="container">
-      <!-- <span class="section-label">Outputs</span> -->
-      <h2 class="section-title">Project Deliverables</h2>
-      <p class="section-desc">
-        The following deliverables will be produced and made available through this
-        landing page and the project SharePoint repository.
-      </p>
+  <div class="wave wave--white-pale" aria-hidden="true">
+    <svg viewBox="0 0 1440 84" preserveAspectRatio="none">
+      <path d="M0,46 C240,62 520,64 760,52 C1000,40 1240,38 1440,48 L1440,84 L0,84 Z" />
+    </svg>
+  </div>
 
-      <div class="deliverables-grid">
-        <a class="deliverable-item deliverable-item--primary"
-          href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Audits/Audit%203/Concept%20of%20Operations.docx?d=w435b33f3d20447d0b489eeda4df4c07a&csf=1&web=1&e=invOeD"
-          target="_blank" rel="noopener">
-          <div class="deliverable-icon">📄</div>
+  <!-- ============================================================
+       OUTPUTS
+       ============================================================ -->
+  <section class="section section--pale" id="outputs">
+    <div class="container">
+      <h2 class="section-title">Project Outputs</h2>
+
+      <div class="outputs-grid">
+        <a class="output-item output-item--feature" href="showcase.html">
+          <span class="icon-badge icon-badge--soft"><i class="fa-solid fa-video" aria-hidden="true"></i></span>
           <div>
-            <h4>Concept of Operations</h4>
-            <p>Scope, objectives, stakeholder analysis, and system overview.</p>
+            <h3>Video Showcase</h3>
+            <p>Our short video presenting the problem, the node and what we achieved.</p>
           </div>
         </a>
-        <a class="deliverable-item deliverable-item--primary"
+        <a class="output-item output-item--feature"
           href="https://anu365.sharepoint.com/:f:/r/sites/LoRaCapstone/Shared%20Documents/Repository?csf=1&web=1&e=XXRxaj"
           target="_blank" rel="noopener">
-          <div class="deliverable-icon">💾</div>
+          <span class="icon-badge icon-badge--soft"><i class="fa-solid fa-folder-open" aria-hidden="true"></i></span>
           <div>
-            <h4>Project Repository</h4>
-            <p>All documents, code, and design files in SharePoint.</p>
+            <h3>Project Repository</h3>
+            <p>Every document, code file and design file from the project, in one place.</p>
           </div>
         </a>
-        <a class="deliverable-item deliverable-item--secondary"
+
+        <a class="output-item"
+          href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Audits/Audit%203/Concept%20of%20Operations.docx?d=w435b33f3d20447d0b489eeda4df4c07a&csf=1&web=1&e=invOeD"
+          target="_blank" rel="noopener">
+          <span class="icon-badge icon-badge--sm icon-badge--soft"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></span>
+          <h3>Concept of Operations</h3>
+          <p>Scope, objectives, stakeholders and system overview.</p>
+        </a>
+        <a class="output-item"
           href="https://anu365.sharepoint.com/:w:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Audits/Audit%203/Project%20Management%20Plan.docx?d=wcec34d4b68cb498db50d974a03d2ab06&csf=1&web=1&e=R9FOJq"
           target="_blank" rel="noopener">
-          <div class="deliverable-icon">📋</div>
-          <div>
-            <h4>Project Management Plan</h4>
-            <p>WBS, schedule, budget, risk register, and communication plan.</p>
-          </div>
+          <span class="icon-badge icon-badge--sm icon-badge--soft"><i class="fa-solid fa-list-check" aria-hidden="true"></i></span>
+          <h3>Project Management Plan</h3>
+          <p>WBS, schedule, budget, risk register and communications.</p>
         </a>
-        <!-- <div class="deliverable-item deliverable-item--secondary">
-          <div class="deliverable-icon">📝</div>
-          <div>
-            <h4>Test &amp; Evaluation Plan</h4>
-            <p>Structured test plan for prototype field and bench testing.</p>
-          </div>
-        </div> -->
-        <a class="deliverable-item deliverable-item--secondary"
+        <a class="output-item"
           href="https://anu365.sharepoint.com/:f:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Workstreams?csf=1&web=1&e=r7MePo"
           target="_blank" rel="noopener">
-          <div class="deliverable-icon">📊</div>
-          <div>
-            <h4>Design Decision Reports</h4>
-            <p>Options assessment for network, sensors, and power & enclosure.</p>
-          </div>
+          <span class="icon-badge icon-badge--sm icon-badge--soft"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></span>
+          <h3>Design Decision Reports</h3>
+          <p>Options assessments for network, sensors, and power &amp; enclosure.</p>
         </a>
-        <div class="deliverable-item deliverable-item--tertiary">
-          <div class="deliverable-icon">⚙️</div>
+        <a class="output-item"
+          href="https://anu365.sharepoint.com/:f:/r/sites/LoRaCapstone/Shared%20Documents/Repository/Prototyping%20%26%20Testing/Firmware?d=w3c4c0ffb26e343fc9ced6c7ab52d782a&csf=1&web=1&e=ly2xQt"
+          target="_blank" rel="noopener">
+          <span class="icon-badge icon-badge--sm icon-badge--soft"><i class="fa-solid fa-code" aria-hidden="true"></i></span>
+          <h3>Node Firmware</h3>
+          <p>Source code for sensor handling, power management and MeshCore.</p>
+        </a>
+
+        <div class="output-item output-item--feature">
+          <span class="icon-badge icon-badge--soft"><i class="fa-solid fa-satellite-dish" aria-hidden="true"></i></span>
           <div>
-            <h4>System Prototype</h4>
-            <p>Working prototype of the hazard detection sensor node(s).</p>
+            <h3>System Prototype</h3>
+            <p>A working, solar-powered hazard sensor node built from off-the-shelf components.</p>
           </div>
         </div>
-        <div class="deliverable-item deliverable-item--tertiary">
-          <div class="deliverable-icon">📖</div>
-          <div>
-            <h4>Handover Documentation</h4>
-            <p>Comprehensive documentation to onboard the next capstone team.</p>
-          </div>
+        <div class="output-item">
+          <span class="icon-badge icon-badge--sm icon-badge--soft"><i class="fa-solid fa-book" aria-hidden="true"></i></span>
+          <h3>Handover Documentation</h3>
+          <p>Everything the next capstone team needs to pick up where we left off.</p>
         </div>
-        <div class="deliverable-item deliverable-item--tertiary">
-          <div class="deliverable-icon">🖼️</div>
-          <div>
-            <h4>Project Poster</h4>
-            <p>Visual summary of findings for the capstone exhibition.</p>
-          </div>
-        </div>
-        <div class="deliverable-item deliverable-item--tertiary">
-          <div class="deliverable-icon">🎥</div>
-          <div>
-            <h4>Video Pitch</h4>
-            <p>Short video presenting the project outcomes to stakeholders.</p>
-          </div>
+        <div class="output-item">
+          <span class="icon-badge icon-badge--sm icon-badge--soft"><i class="fa-solid fa-image" aria-hidden="true"></i></span>
+          <h3>Project Poster</h3>
+          <p>A one-page visual summary for the capstone exhibition.</p>
         </div>
       </div>
     </div>
@@ -662,7 +666,7 @@
   <site-footer></site-footer>
 
   <script>
-    // Fetch and populate updates dynamically
+    // Render the project log from updates.json
     fetch('updates.json')
       .then(response => response.json())
       .then(updates => {
@@ -672,24 +676,20 @@
         const archiveContainer = document.getElementById("archived-updates-container");
 
         const buildCardHTML = (update) => {
-          let imageHTML = "";
-          if (update.image) {
-            imageHTML = `
-              <div class="update-image-wrap">
-                <img src="${update.image}" alt="${update.imageAlt || ''}" style="border-radius: 16px;" />
-                ${update.imageCaption ? `<div class="update-image-caption">${update.imageCaption}</div>` : ''}
-              </div>
-            `;
-          }
+          const imageHTML = update.image ? `
+            <div class="update-image-wrap">
+              <img src="${update.image}" alt="${update.imageAlt || ''}" loading="lazy" />
+              ${update.imageCaption ? `<div class="update-image-caption">${update.imageCaption}</div>` : ''}
+            </div>` : '';
 
           return `
-            <div class="update-card">
+            <div class="update-card${update.image ? '' : ' update-card--no-image'}">
               <div class="update-content">
                 <div class="update-meta">
                   <span class="update-date">${update.date}</span>
-                  ${update.tag ? `<span class="update-separator">&middot;</span><span class="update-tag">${update.tag}</span>` : ''}
+                  ${update.tag ? `<span class="update-tag">&middot; ${update.tag}</span>` : ''}
                 </div>
-                <h3 class="update-title">${update.title}</h3>
+                ${update.title ? `<h3 class="update-title">${update.title}</h3>` : ''}
                 <p class="update-body">${update.body}</p>
                 ${update.author ? `<div class="update-author">- ${update.author}</div>` : ''}
               </div>
@@ -698,21 +698,18 @@
           `;
         };
 
-        // Render latest update
         latestContainer.innerHTML = buildCardHTML(updates[0]);
 
-        // Render remaining updates in the archive
         if (updates.length > 1) {
           archiveContainer.innerHTML = updates.slice(1).map(buildCardHTML).join('');
         } else {
-          // Hide the archive element if there is only 1 update
           const archiveElement = document.querySelector(".updates-archive");
           if (archiveElement) archiveElement.style.display = "none";
         }
       })
       .catch(err => console.error("Error loading updates:", err));
 
-    // Accordion slide animation for updates archive
+    // Accordion slide animation for the log archive
     document.querySelectorAll('.updates-archive').forEach(function (details) {
       var list = details.querySelector('.updates-archive-list');
 
@@ -756,88 +753,23 @@
       });
     });
 
-    // Accordion slide animation for phase details
-    document.querySelectorAll('.phase-details').forEach(function (details) {
-      var content = details.querySelector('.phase-content');
-      if (!content) return;
-
-      details.addEventListener('click', function (e) {
-        // If clicking a link or button inside summary, don't toggle
-        if (e.target.closest('a') || e.target.closest('button')) return;
-        if (!e.target.closest('summary')) return;
-        e.preventDefault();
-
-        if (details.open) {
-          content.style.maxHeight = content.scrollHeight + 'px';
-          var closeTimer;
-          var doClose = function () {
-            clearTimeout(closeTimer);
-            content.removeEventListener('transitionend', doClose);
-            details.removeAttribute('open');
-            content.style.maxHeight = '';
-          };
-          requestAnimationFrame(function () {
-            requestAnimationFrame(function () {
-              content.style.maxHeight = '0';
-              content.addEventListener('transitionend', doClose, { once: true });
-              closeTimer = setTimeout(doClose, 500);
-            });
-          });
-        } else {
-          details.setAttribute('open', '');
-          content.style.maxHeight = '0';
-          var openTimer;
-          var doOpen = function () {
-            clearTimeout(openTimer);
-            content.removeEventListener('transitionend', doOpen);
-            content.style.maxHeight = '';
-          };
-          requestAnimationFrame(function () {
-            requestAnimationFrame(function () {
-              content.style.maxHeight = content.scrollHeight + 'px';
-              content.addEventListener('transitionend', doOpen, { once: true });
-              openTimer = setTimeout(doOpen, 500);
-            });
-          });
-        }
-      });
-    });
-
-    // Audit banner interactive control and dynamic layout calculations
+    // Offset the sticky navbar below the audit banner while it is shown
     (function () {
       const banner = document.getElementById('audit-banner');
       if (!banner || localStorage.getItem('audit-banner-dismissed')) return;
 
       function updateBannerHeight() {
         if (banner.style.display !== 'none') {
-          const height = banner.offsetHeight;
+          // Floor the fractional height so the navbar tucks under the banner instead of leaving a sliver gap
+          const height = Math.floor(banner.getBoundingClientRect().height);
           document.documentElement.style.setProperty('--banner-height', height + 'px');
-          document.documentElement.style.setProperty('--sticky-header-height', (height + 62) + 'px');
+          document.documentElement.style.setProperty('--sticky-header-height', (height + 64) + 'px');
         }
       }
 
-      // Initial calculation
       updateBannerHeight();
-
-      // Recalculate on window load and resize to handle image loads or layout changes
       window.addEventListener('load', updateBannerHeight);
       window.addEventListener('resize', updateBannerHeight);
-
-      // Close button event
-      const closeBtn = document.getElementById('audit-banner-close');
-      if (closeBtn) {
-        closeBtn.addEventListener('click', function () {
-          banner.style.opacity = '0';
-          banner.style.marginTop = '-' + banner.offsetHeight + 'px';
-          document.documentElement.classList.remove('has-audit-banner');
-          document.documentElement.style.removeProperty('--banner-height');
-          document.documentElement.style.setProperty('--sticky-header-height', '62px');
-          localStorage.setItem('audit-banner-dismissed', 'true');
-          setTimeout(() => {
-            banner.style.display = 'none';
-          }, 200); // matches the CSS transition time
-        });
-      }
     })();
   </script>
 </body>
