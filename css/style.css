@@ -994,6 +994,16 @@ site-footer {
 /* =============================================
    TEAM
    ============================================= */
+.team-photo {
+  margin-bottom: 36px;
+}
+
+/* Show the whole group photo rather than the fixed-height crop used elsewhere */
+.team-photo .photo-frame img {
+  height: auto;
+  aspect-ratio: 1996 / 1108;
+}
+
 .team-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1514,7 +1524,7 @@ a.output-item--feature:hover::after {
   }
 
   .photo-frame img {
-    height: 260px;
+    height: 300px;
   }
 
   .facts,
