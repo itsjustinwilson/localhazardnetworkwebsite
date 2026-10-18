@@ -781,6 +781,11 @@ site-footer {
   margin-bottom: 24px;
 }
 
+/* No extra gap under the last phase in the section */
+#journey .phase:last-child {
+  margin-bottom: 0;
+}
+
 /* Collapsible phases (closed by default) */
 .phase--collapsible summary {
   list-style: none;
@@ -911,30 +916,53 @@ site-footer {
   color: var(--yellow);
 }
 
+/* =============================================
+   TEAM GALLERY (mosaic: one large feature photo, five smaller)
+   ============================================= */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 230px;
   gap: 16px;
 }
 
 .gallery figure {
+  position: relative;
   border-radius: var(--radius-sm);
   overflow: hidden;
-  background: var(--navy-2);
-  border: 1px solid var(--border-dark);
+  background: var(--navy);
+  box-shadow: var(--shadow);
+}
+
+.gallery .gallery-feature {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* Last photo stretches across the rest of the final row */
+.gallery figure:nth-last-child(2) {
+  grid-column: span 2;
 }
 
 .gallery img {
   width: 100%;
-  height: 220px;
+  height: 100%;
   object-fit: cover;
 }
 
+/* Caption sits on a soft gradient over the bottom of each photo */
 .gallery figcaption {
-  padding: 10px 14px;
+  position: absolute;
+  inset: auto 0 0;
+  padding: 36px 16px 14px;
   font-size: 0.92rem;
-  font-style: italic;
-  color: var(--on-dark-faint);
+  font-weight: 600;
+  color: var(--white);
+  background: linear-gradient(to top, rgba(8, 29, 46, 0.85), rgba(8, 29, 46, 0));
+}
+
+.gallery .gallery-feature figcaption {
+  font-size: 1.05rem;
 }
 
 /* =============================================
@@ -1510,9 +1538,22 @@ a.output-item--feature:hover::after {
   .facts,
   .steps,
   .features,
-  .gallery,
   .outputs-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px;
+    grid-auto-flow: dense;
+  }
+
+  .gallery figure:nth-last-child(2) {
+    grid-column: auto;
+  }
+
+  .gallery .gallery-feature {
+    grid-row: span 2;
   }
 
   .ws-grid,
@@ -1593,7 +1634,6 @@ a.output-item--feature:hover::after {
   }
 
   /* Card groups become swipeable rows; the next item peeks in as a cue */
-  .gallery,
   .outputs-grid,
   .hazards-grid,
   .features {
@@ -1608,19 +1648,46 @@ a.output-item--feature:hover::after {
     -webkit-overflow-scrolling: touch;
   }
 
-  .gallery::-webkit-scrollbar,
   .outputs-grid::-webkit-scrollbar,
   .hazards-grid::-webkit-scrollbar,
   .features::-webkit-scrollbar {
     display: none;
   }
 
-  .gallery figure,
   .output-item,
   .hazard-item,
   .feature {
     flex: 0 0 85%;
     scroll-snap-align: start;
+  }
+
+  /* Team gallery: edge-to-edge mosaic; large photos span the full width, small ones pair up */
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 150px;
+    grid-auto-flow: dense;
+    gap: 4px;
+    margin: 0 -16px;
+  }
+
+  .gallery figure {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .gallery .gallery-feature {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .gallery figcaption {
+    padding: 28px 10px 8px;
+    font-size: 0.78rem;
+  }
+
+  .gallery .gallery-feature figcaption {
+    padding: 36px 16px 12px;
+    font-size: 0.92rem;
   }
 
   /* Room for the card shadows inside the scroll area */
