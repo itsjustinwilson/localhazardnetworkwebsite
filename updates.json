@@ -1,5 +1,35 @@
 [
   {
+    "date": "18 October 2026",
+    "tag": "Sem 2 · Week 10",
+    "title": "Testing Complete",
+    "author": "Justin W",
+    "body": "As of this week, all 64 criteria testing items of the prototype sensor node have been completed. The next steps of this project involve creating handover documents for the hosts and future teams with recommendations, and preparing for the final showcase of our project. We are all very proud of the progress we have made over this year and look forward to seeing where the project goes from here!",
+    "image": "",
+    "imageAlt": "",
+    "imageCaption": "Kai putting together the rototype"
+  },
+  {
+    "date": "3 October 2026",
+    "tag": "Sem 2 · Week 8",
+    "title": "Assembled Prototype",
+    "author": "Justin W",
+    "body": "After a long Saturday, we have successfully completed the assembly of the prototype sensor node, including all wiring, attaching the sensors, and soldering the components. Next up is testing and verifying the functionality of the prototype to ensure that it satisfies our requirements and design criteria. ",
+    "image": "images/prototyping/ken-prototype.png",
+    "imageAlt": "Person holding weather station",
+    "imageCaption": "Ken holding our assembled prototype"
+  },
+  {
+    "date": "2 September 2026",
+    "tag": "Sem 2 · Mid-Semester Break",
+    "title": "Assembling the Prototype",
+    "author": "Justin W",
+    "body": "Halfway through the final stemester, we are making good progress in assembling the prototype sensor node. Currently all the sensors output expected data and interface with our microprocessor. The next steps involve finalising the network side of the firm firmware and finishing the assembly the prototype. ",
+    "image": "images/prototyping/prototyping-assembling.jpg",
+    "imageAlt": "Person putting together the prototype",
+    "imageCaption": "Kai putting together the prototype"
+  },
+  {
     "date": "2 September 2026",
     "tag": "Sem 2 · Week 6",
     "title": "",
@@ -7,7 +37,7 @@
     "body": "Heading into the mid-semester break, we are well into developing the firmware for our sensor node, currently with a working gas, temperature, humidity, and pressure sensor. We have also depeloped a comprehensive CAD model for the entire node and will begin to assemble the physical prototype during break. During the break we also aim to complete all the testing and evaluation.",
     "image": "images/prototyping/firmware-soldering.jpg",
     "imageAlt": "Kyle and Ken soldering components",
-    "imageCaption": "Kyle and Ken (Firmware team) soldering components"
+    "imageCaption": "Kyle and Ken soldering components"
   },
   {
     "date": "7 August 2026",
@@ -27,7 +57,7 @@
     "body": "We got the opportunity to attend the Rural Fire Service Communications Team presentation, where we gained valuable insights and context into the ways that the RFS communicate with their teams in the field, and how they use data to make decisions. We will take the learnings from our time with the RFS and apply them to our project, ensuring that our work is aligned with the needs of emergency services and the communities they serve.",
     "image": "images/field-tests/rfs-comms-vehicle.jpg",
     "imageAlt": "Four team members standing together at night in front of a NSW Rural Fire Service response van with visible NSW RURAL FIRE SERVICE lettering",
-    "imageCaption": "The team in front of the RFS Operational Commmand Vehicle"
+    "imageCaption": "Justin, Ruby, Grady, and Kyle in front of the RFS Operational Commmand Vehicle"
   },
   {
     "date": "30 May 2026",
