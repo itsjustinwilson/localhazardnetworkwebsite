@@ -201,7 +201,7 @@
             The node's sensor readings can signal the early onset of six natural hazards common in rural NSW:
           </p>
 
-          <div class="hazards-grid">
+          <div class="hazards-grid" role="region" aria-label="Detectable hazards">
             <div class="hazard-item">
               <span class="icon-badge icon-badge--sm"><i class="fa-solid fa-house-flood-water"
                   aria-hidden="true"></i></span>
@@ -319,10 +319,11 @@
           </g>
         </svg>
       </div>
+      <p class="diagram-hint" aria-hidden="true">Swipe to follow the data <i class="fa-solid fa-arrow-right"></i></p>
 
       
       <h3 class="features-title">Network &amp; Power</h3>
-      <div class="features">
+      <div class="features" role="region" aria-label="Network and power features">
         <div class="feature">
           <i class="fa-solid fa-tower-broadcast" aria-hidden="true"></i>
           <h4>Long-Range Radio</h4>
@@ -388,12 +389,12 @@
         build phase that turned those decisions into a working, tested prototype.
       </p>
 
-      <div class="phase">
-        <div class="phase-head">
-          <h3>Phase 1: Research &amp; Design Decisions</h3>
-        </div>
-        <p class="phase-desc">Three parallel workstreams each tackled one technical question and reported back with a
-          recommendation.</p>
+      <details class="phase phase--collapsible">
+        <summary>
+          <h3>Phase 1: Research &amp; Design Decisions <i class="fa-solid fa-chevron-right phase-chevron" aria-hidden="true"></i></h3>
+          <span class="phase-desc">Three parallel workstreams each tackled one technical question and reported back
+            with a recommendation.</span>
+        </summary>
 
         <div class="ws-grid">
           <div class="ws-card">
@@ -441,14 +442,14 @@
                 class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
           </div>
         </div>
-      </div>
+      </details>
 
-      <div class="phase">
-        <div class="phase-head">
-          <h3>Phase 2: Prototyping &amp; Testing</h3>
-        </div>
-        <p class="phase-desc">The team split in two to bring the Phase 1 recommendations together into a single
-          prototype node.</p>
+      <details class="phase phase--collapsible">
+        <summary>
+          <h3>Phase 2: Prototyping &amp; Testing <i class="fa-solid fa-chevron-right phase-chevron" aria-hidden="true"></i></h3>
+          <span class="phase-desc">The team split in two to bring the Phase 1 recommendations together into a single
+            prototype node.</span>
+        </summary>
 
         <div class="ws-grid ws-grid--2">
           <div class="ws-card">
@@ -480,7 +481,7 @@
                 class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
           </div>
         </div>
-      </div>
+      </details>
 
       <div class="phase" style="margin-bottom:0;">
         <div class="phase-head">
@@ -488,7 +489,7 @@
         </div>
         <p class="phase-desc">From range testing on Mt Ainslie to time spent with the RFS Communications Team.</p>
 
-        <div class="gallery">
+        <div class="gallery" role="region" aria-label="In the Field photos">
           <figure>
             <img src="images/field-tests/antennae-testing.jpg" alt="Antenna testing during MeshCore field evaluation"
               loading="lazy" />
@@ -627,7 +628,7 @@
     <div class="container">
       <h2 class="section-title">Project Outputs</h2>
 
-      <div class="outputs-grid">
+      <div class="outputs-grid" role="region" aria-label="Project outputs">
         <a class="output-item output-item--feature" href="showcase.html">
           <span class="icon-badge icon-badge--soft"><i class="fa-solid fa-video" aria-hidden="true"></i></span>
           <div>
@@ -802,6 +803,54 @@
       updateBannerHeight();
       window.addEventListener('load', updateBannerHeight);
       window.addEventListener('resize', updateBannerHeight);
+    })();
+
+    // On phones, team cards show name and role only; tapping one expands its bio (one at a time)
+    (function () {
+      const mobile = window.matchMedia('(max-width: 640px)');
+      const cards = document.querySelectorAll('.team-card');
+
+      const setOpen = (card, open) => {
+        card.classList.toggle('is-open', open);
+        if (mobile.matches) card.setAttribute('aria-expanded', String(open));
+      };
+
+      const toggle = card => {
+        if (!mobile.matches) return;
+        const open = !card.classList.contains('is-open');
+        cards.forEach(c => setOpen(c, false));
+        setOpen(card, open);
+      };
+
+      const applyMode = () => {
+        cards.forEach(card => {
+          if (mobile.matches) {
+            card.setAttribute('role', 'button');
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('aria-expanded', String(card.classList.contains('is-open')));
+          } else {
+            card.classList.remove('is-open');
+            ['role', 'tabindex', 'aria-expanded'].forEach(attr => card.removeAttribute(attr));
+          }
+        });
+      };
+
+      cards.forEach(card => {
+        card.addEventListener('click', e => {
+          if (e.target.closest('a')) return; // let the email link work
+          toggle(card);
+        });
+        card.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            if (!mobile.matches || e.target !== card) return;
+            e.preventDefault();
+            toggle(card);
+          }
+        });
+      });
+
+      mobile.addEventListener('change', applyMode);
+      applyMode();
     })();
   </script>
 </body>

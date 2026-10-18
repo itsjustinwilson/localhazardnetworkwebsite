@@ -543,6 +543,11 @@ site-footer {
   align-items: center;
 }
 
+/* Let columns shrink so the swipeable hazards row scrolls instead of widening the page */
+.hazards-layout > * {
+  min-width: 0;
+}
+
 .hazards-photo img {
   height: 460px;
   object-position: center 30%;
@@ -603,6 +608,11 @@ site-footer {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* "Swipe" hint under the diagram, phones only */
+.diagram-hint {
+  display: none;
 }
 
 .data-path {
@@ -769,6 +779,53 @@ site-footer {
   color: var(--on-dark-muted);
   max-width: 720px;
   margin-bottom: 24px;
+}
+
+/* Collapsible phases (closed by default) */
+.phase--collapsible summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.phase--collapsible summary::-webkit-details-marker {
+  display: none;
+}
+
+.phase--collapsible h3 {
+  margin-bottom: 8px;
+}
+
+.phase--collapsible .phase-desc {
+  display: block;
+}
+
+.phase--collapsible:not([open]) {
+  margin-bottom: 32px;
+}
+
+.phase--collapsible:not([open]) .phase-desc {
+  margin-bottom: 0;
+}
+
+.phase-chevron {
+  margin-left: 6px;
+  color: var(--yellow);
+  font-size: 0.95rem;
+  transition: transform 0.25s ease;
+}
+
+.phase--collapsible[open] .phase-chevron {
+  transform: rotate(90deg);
+}
+
+.phase--collapsible summary:hover h3 {
+  color: var(--yellow);
+}
+
+.phase--collapsible summary:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 6px;
+  border-radius: 4px;
 }
 
 .ws-grid {
@@ -1529,18 +1586,48 @@ a.output-item--feature:hover::after {
 
   .facts,
   .steps,
-  .features,
-  .gallery,
-  .outputs-grid,
-  .hazards-grid,
   .ws-grid,
   .ws-grid--2,
   .team-grid {
     grid-template-columns: 1fr;
   }
 
-  .output-item--feature {
-    grid-column: auto;
+  /* Card groups become swipeable rows; the next item peeks in as a cue */
+  .gallery,
+  .outputs-grid,
+  .hazards-grid,
+  .features {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 16px;
+    margin: 0 -16px;
+    padding: 0 16px 4px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .gallery::-webkit-scrollbar,
+  .outputs-grid::-webkit-scrollbar,
+  .hazards-grid::-webkit-scrollbar,
+  .features::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery figure,
+  .output-item,
+  .hazard-item,
+  .feature {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+  }
+
+  /* Room for the card shadows inside the scroll area */
+  .outputs-grid,
+  .hazards-grid {
+    padding-top: 4px;
+    padding-bottom: 16px;
   }
 
   .hero-actions .btn {
@@ -1552,8 +1639,43 @@ a.output-item--feature:hover::after {
     padding: 22px;
   }
 
+  /* Draw the diagram at a readable size and let it pan sideways */
   .network-diagram {
     padding: 16px 12px 4px;
+    margin-bottom: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .network-diagram::-webkit-scrollbar {
+    display: none;
+  }
+
+  .network-diagram svg {
+    width: 660px;
+    max-width: none;
+  }
+
+  .diagram-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 12px 0 40px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-faint);
+  }
+
+  .diagram-hint i {
+    color: var(--yellow);
+    animation: hintNudge 1.6s ease-in-out infinite;
+  }
+
+  @keyframes hintNudge {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
   }
 }
 
