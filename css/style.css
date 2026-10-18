@@ -198,7 +198,8 @@ img {
   color: var(--blue);
 }
 
-.output-item--feature .icon-badge--soft {
+.output-item--feature .icon-badge--soft,
+.output-item--blue .icon-badge--soft {
   background: rgba(165, 207, 238, 0.14);
   color: var(--sky);
 }
@@ -1200,20 +1201,32 @@ a.output-item:hover::after {
   background: var(--navy);
 }
 
-.output-item--feature h3 {
+/* Blue card: same dark styling as the feature card, but normal width */
+.output-item--blue {
+  background: var(--navy);
+}
+
+.output-item--feature h3,
+.output-item--blue h3 {
   color: var(--white);
+}
+
+.output-item--feature h3 {
   font-size: 1.15rem;
 }
 
-.output-item--feature p {
+.output-item--feature p,
+.output-item--blue p {
   color: var(--on-dark-muted);
 }
 
-a.output-item--feature::after {
+a.output-item--feature::after,
+a.output-item--blue::after {
   color: var(--on-dark-faint);
 }
 
-a.output-item--feature:hover::after {
+a.output-item--feature:hover::after,
+a.output-item--blue:hover::after {
   color: var(--yellow);
 }
 
