@@ -15,6 +15,9 @@
 }
 
 :root {
+  /* Footer sky fades in from this colour; match it to the last section on each page */
+  --footer-sky-top: var(--white);
+
   /* Shared line height for all body copy */
   --lh-body: 1.2;
 
@@ -1252,19 +1255,19 @@ a.output-item--feature:hover::after {
 }
 
 .sky-overlay--normal {
-  background: linear-gradient(to bottom, var(--pale) 0%, var(--sky) 100%);
+  background: linear-gradient(to bottom, var(--footer-sky-top) 0%, var(--sky) 100%);
   opacity: 1;
 }
 
 /* Hazard skies fade in from the section above so there's no hard edge */
 .sky-overlay--storm {
-  background: linear-gradient(to bottom, var(--pale) 0%, #8A9AAA 30%, #4A5A6B 65%, #2B3B4D 100%);
+  background: linear-gradient(to bottom, var(--footer-sky-top) 0%, #8A9AAA 30%, #4A5A6B 65%, #2B3B4D 100%);
 }
 
 .sky-bushfire-glow {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, var(--pale) 0%, #F7C98B 30%, #E46A1F 70%, #7C2D12 100%);
+  background: linear-gradient(to bottom, var(--footer-sky-top) 0%, #F7C98B 30%, #E46A1F 70%, #7C2D12 100%);
 }
 
 .cloud {
@@ -1668,6 +1671,12 @@ a.output-item--feature:hover::after {
     grid-auto-flow: dense;
     gap: 4px;
     margin: 0 -16px;
+  }
+
+  /* Round only the outer corners of the mosaic as a whole */
+  .gallery {
+    border-radius: var(--radius-sm);
+    overflow: hidden;
   }
 
   .gallery figure {
