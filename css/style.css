@@ -1234,7 +1234,7 @@ a.output-item--feature:hover::after {
   /* Grow with the viewport so wide screens don't crop the top of the scene
      (the scene's viewBox is 8:1, so 12.5vw keeps it whole up to the cap) */
   height: clamp(120px, 12.5vw, 340px);
-  background: var(--pale);
+  background: var(--footer-sky-top);
   overflow: hidden;
 }
 
@@ -1255,7 +1255,7 @@ a.output-item--feature:hover::after {
 }
 
 .sky-overlay--normal {
-  background: linear-gradient(to bottom, var(--footer-sky-top) 0%, var(--sky) 100%);
+  background: var(--white);
   opacity: 1;
 }
 
@@ -1270,7 +1270,9 @@ a.output-item--feature:hover::after {
   background: linear-gradient(to bottom, var(--footer-sky-top) 0%, #F7C98B 30%, #E46A1F 70%, #7C2D12 100%);
 }
 
+/* Soft shadow so white clouds read against the white sky */
 .cloud {
+  filter: drop-shadow(0 2px 4px rgba(17, 76, 126, 0.22));
   transition: fill 1.5s ease;
 }
 
@@ -1284,7 +1286,7 @@ a.output-item--feature:hover::after {
 .cloud-3 { animation: floatCloud 20s ease-in-out infinite 4s; }
 
 .sun-orb {
-  transition: opacity 1.5s ease;
+  transition: opacity 1.5s ease, fill 1.5s ease;
 }
 
 /* Sensor status light: one colour, one blink rate in every weather state.

@@ -71,13 +71,13 @@ const FOOTER_HTML = `
         <g class="clouds-group">
           <path class="cloud cloud-1"
             d="M200 70 a20 20 0 0 1 30 -5 a25 25 0 0 1 40 5 a20 20 0 0 1 10 15 a10 10 0 0 1 -10 10 h-70 a10 10 0 0 1 -10 -15 a15 15 0 0 1 10 -10 z"
-            fill="rgba(255,255,255,0.75)" />
+            fill="#FFFFFF" />
           <path class="cloud cloud-2"
             d="M500 50 a15 15 0 0 1 20 -3 a20 20 0 0 1 30 3 a15 15 0 0 1 8 12 a8 8 0 0 1 -8 8 h-50 a8 8 0 0 1 -8 -12 a12 12 0 0 1 8 -8 z"
-            fill="rgba(255,255,255,0.6)" />
+            fill="#FFFFFF" />
           <path class="cloud cloud-3"
             d="M900 65 a18 18 0 0 1 25 -4 a22 22 0 0 1 35 4 a18 18 0 0 1 9 13 a9 9 0 0 1 -9 9 h-60 a9 9 0 0 1 -9 -13 a14 14 0 0 1 9 -9 z"
-            fill="rgba(255,255,255,0.7)" />
+            fill="#FFFFFF" />
         </g>
 
         <!-- Sun (Normal) / Fire Glow (Bushfire) -->
