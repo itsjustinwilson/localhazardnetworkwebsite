@@ -235,7 +235,7 @@ img {
   background: #FFCD33;
   color: var(--navy);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 192, 0, 0.35);
+  /* box-shadow: 0 8px 24px rgba(255, 192, 0, 0.35); */
 }
 
 .btn-outline {
@@ -314,9 +314,8 @@ site-footer {
   position: sticky;
   top: var(--banner-height, 0px);
   z-index: 100;
-  background: rgba(13, 43, 69, 0.96);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  /* Solid, not translucent: Safari on iOS 26 tints its toolbar from this colour */
+  background: var(--navy);
   border-bottom: 1px solid var(--border-dark);
 }
 
@@ -388,6 +387,10 @@ site-footer {
   padding: 88px 0 56px;
   position: relative;
   overflow: hidden;
+  /* Slide up under the sticky navbar (64px tall) so no page background shows through it;
+     the matching border keeps the content where it was without touching the padding overrides */
+  margin-top: -64px;
+  border-top: 64px solid var(--navy);
 }
 
 .hero .container {
@@ -417,10 +420,11 @@ site-footer {
   display: inline-block;
   width: 0.17em;
   height: 0.17em;
-  margin-left: 0.06em;
+  margin-left: 0.01em;
   background: var(--yellow);
-  border-radius: 0.04em;
-  transform: skewX(-10deg);
+  /* Rounded, slightly slanted square to match the dot in the LHN logo */
+  border-radius: 40%;
+  transform: skewX(-9deg);
 }
 
 .hero-tagline {
@@ -804,15 +808,26 @@ site-footer {
   margin-bottom: 8px;
 }
 
-.phase--collapsible .phase-desc {
-  display: block;
-}
-
-.phase--collapsible:not([open]) {
+.phase--collapsible {
   margin-bottom: 32px;
 }
 
-.phase--collapsible:not([open]) .phase-desc {
+.phase--collapsible .phase-desc {
+  display: block;
+  margin-bottom: 0;
+}
+
+/* Spacing lives inside the body so it slides with the content */
+.phase-body {
+  display: flow-root;
+  transition: max-height 0.4s ease;
+}
+
+.phase-body > .ws-grid {
+  margin: 24px 0;
+}
+
+#journey .phase:last-child .phase-body > .ws-grid {
   margin-bottom: 0;
 }
 
@@ -1649,15 +1664,15 @@ a.output-item--blue:hover::after {
   .facts,
   .steps,
   .ws-grid,
-  .ws-grid--2,
-  .team-grid {
+  .ws-grid--2 {
     grid-template-columns: 1fr;
   }
 
   /* Card groups become swipeable rows; the next item peeks in as a cue */
   .outputs-grid,
   .hazards-grid,
-  .features {
+  .features,
+  .team-grid {
     display: flex;
     gap: 12px;
     overflow-x: auto;
@@ -1671,13 +1686,15 @@ a.output-item--blue:hover::after {
 
   .outputs-grid::-webkit-scrollbar,
   .hazards-grid::-webkit-scrollbar,
-  .features::-webkit-scrollbar {
+  .features::-webkit-scrollbar,
+  .team-grid::-webkit-scrollbar {
     display: none;
   }
 
   .output-item,
   .hazard-item,
-  .feature {
+  .feature,
+  .team-card {
     flex: 0 0 85%;
     scroll-snap-align: start;
   }

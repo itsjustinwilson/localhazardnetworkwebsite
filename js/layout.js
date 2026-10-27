@@ -21,8 +21,8 @@ const NAV_LINKS = [
   ['index.html#about', 'About'],
   ['index.html#hazards', 'Hazards'],
   ['index.html#how-it-works', 'How It Works'],
-  ['index.html#journey', 'Journey'],
   ['index.html#team', 'Team'],
+  ['index.html#journey', 'Journey'],
   ['index.html#outputs', 'Outputs'],
 ];
 
