@@ -1286,7 +1286,7 @@ a.output-item--blue:hover::after {
 }
 
 .sky-overlay--normal {
-  background: var(--white);
+  background: var(--footer-sky-top);
   opacity: 1;
 }
 
